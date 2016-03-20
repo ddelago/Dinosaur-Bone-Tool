@@ -1,0 +1,11 @@
+BONUS:
+1. We have an option to change the name of the DinoBone Store for the seller
+2. We have marked the prime meridiam and equator on our map
+3. Dinosaur bones market websites. We only used the ones available, see text.csv for specifc bones used.
+   http://www.dinosaurstore.com/teeth-n-claws.htm
+   http://www.dinosaurstore.com/eggs.htm
+   http://www.dinosaurstore.com/fossil_dinosaur_skin.htm
+   http://www.dinosaurstore.com/DINOSAUR-FOOTPRINTS.htm
+   https://www.fossilera.com/fossils/huge-rooted-camarasaurus-tooth-skull-creek-quarry
+   https://www.fossilera.com/fossils/2-62-spinosaurus-tooth-kem-kem-beds
+   http://www.dinosaurstore.com/dinosaur_vertebrae.htm
