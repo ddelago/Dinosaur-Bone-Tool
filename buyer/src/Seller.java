@@ -1,7 +1,9 @@
-/**
+package Seller; /**
  * Daniel Delago    1/28/2016
  * Seller Program
  */
+import Datastore.*;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -13,9 +15,10 @@ public class Seller {
 
     Scanner input;
     ArrayList<Coordinate> coordList;
-    ArrayList<Bones> boneList;
+    ArrayList<Bone> boneList;
     String shopName = "DK's Dino Shop";
     LoadFile file;
+    String[] specificBones = {"amargasaurus","dakosaurus","giganotosaurus","hylaeosaurus","pteranodon","pterodactyl","pterosaur","shastasaurus","spinosaurus","triceratops","tyrannosaurusrex","velociraptor"};
 
     public Seller(){                                       //Constructor for Seller Class
 
@@ -29,9 +32,9 @@ public class Seller {
         Boolean running = true;
         while(running) {
             System.out.println("Bone Seller Menu:");
-            System.out.println("1. Load Map\n2. Handle a bone\n3. Display Map\n4. Save Files\n5. Load Files\n6. Create Shop Name\n7. Quit");
+            System.out.println("1. Load Map\n2. Handle a bone\n3. Display Map\n4. Save Files\n5. Load Files\n6. Create Shop Name\n7. Seller\n8. Quit");
             choice = input.nextInt();
-            if (choice < 1 || choice > 7) {
+            if (choice < 1 || choice > 8) {
                 System.out.println("That is not a valid input.\n");
                 continue;
             }
@@ -52,8 +55,8 @@ public class Seller {
                     break;
                 case 5:
                     boneList=file.loadBones();
-                    for(Bones b : boneList) {
-                        System.out.println(b.toString());
+                    for(Bone b : boneList) {
+                        System.out.println(b);
                     }
                     break;
                 case 6:
@@ -61,10 +64,32 @@ public class Seller {
                     shopName = input.next();
                     break;
                 case 7:
+                    setupUser();
+                case 8:
                     running = false;
                     break;
             }
         }
+    }
+
+    private void setupUser() {
+        String name;
+        int x;
+        int y;
+        Coordinate mapX = null;
+        Coordinate mapY = null;
+        SellerUser user;
+
+        try{
+            name = input.next();
+            x = input.nextInt();
+            y = input.nextInt();
+            //SellerUser user = new SellerUser(;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     public void loadMap(){                                              //Load the map from map.txt
@@ -96,9 +121,10 @@ public class Seller {
             choice = input.nextInt();
 
             if(choice == 1){
-                Bones newBone = new Bones();
+                /*Bone newBone = new Bone();
                 newBone.create();
-                boneList.add(newBone);
+                boneList.add(newBone);*/
+                create();
             }
 
             if(choice == 2){
@@ -106,14 +132,14 @@ public class Seller {
                 System.out.println("----------------------------------------------------");
                 System.out.println("|ID|          Bones for Sale           |   Price   |");
                 System.out.println("----------------------------------------------------");
-                for(Bones b : boneList) {
-                    System.out.printf("|%2d|%-35s|$%-10.2f|%n",b.id,b.name,b.price);
+                for(Bone b : boneList) {
+                    System.out.printf("|%2d|%-35s|$%-10.2f|%n",b.getID(),b.getName(),b.getPrice());
                 }
                 System.out.println("----------------------------------------------------");
                 System.out.print("Select a bone to update by entering it's ID or enter -1 to quit: ");
                 id = input.nextInt();
                 for(i=0;i<boneList.size();i++) {
-                    Bones temp = boneList.get(i);
+                    Bone temp = boneList.get(i);
                     if(temp.getID() != id)
                         continue;
                     for(int k=0;k<coordList.size();k++){
@@ -131,17 +157,17 @@ public class Seller {
             }
 
             if(choice == 3){
-                int id,i;
+                int id;
                 System.out.println("----------------------------------------------------");
                 System.out.println("|ID|          Bones for Sale           |   Price   |");
                 System.out.println("----------------------------------------------------");
-                for(Bones b : boneList) {
-                    System.out.printf("|%2d|%-35s|$%-10.2f|%n",b.id,b.name,b.price);
+                for(Bone b : boneList) {
+                    System.out.printf("|%2d|%-35s|$%-10.2f|%n",b.getID(),b.getName(),b.getPrice());
                 }
                 System.out.println("----------------------------------------------------");
                 System.out.print("Select a bone to remove by entering it's ID or enter -1 to quit: ");
                 id = input.nextInt();
-                for(Bones b : boneList) {
+                for(Bone b : boneList) {
                     if(b.getID() != id)
                         continue;
                     for(int k=0;k<coordList.size();k++){
@@ -158,9 +184,95 @@ public class Seller {
         }
     }
 
-    public void displayMap(){                                       //Displays the map containing the bones for sale
+    private void create() {
         try {
-            for(Bones b : boneList) {
+            Bone bone;
+            boolean match = false;
+            String temp = "";
+            System.out.print("Enter the values of the dinosaur on a single line:\n");
+            String dinosaurName = input.next();
+            float price = input.nextFloat();
+            float longitude = input.nextFloat();
+            float lat = input.nextFloat();
+
+            // Regex split, and lower case
+            if (dinosaurName.contains(" ")){
+                temp = dinosaurName.replaceAll("\\s","").toLowerCase();
+            }
+
+            for (int i = 0; i < specificBones.length; i++) {
+                if (temp.equals(specificBones[i])){
+                    match = true;
+                }
+            }
+
+            if (match){
+                switch (dinosaurName){
+                    case("amargasaurus"):
+                        bone = new Amargasaurus(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,"abcdefghijk");
+                        boneList.add(bone);
+                        break;
+                    case("dakosaurus"):
+                        bone = new Dakosaurus(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ",true,"flipper");
+                        boneList.add(bone);
+                        break;
+                    case("giganotosaurus"):
+                        bone = new Giganotosaurus(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0);
+                        boneList.add(bone);
+                        break;
+                    case("hylaeosaurus"):
+                        bone = new Hylaeosaurus(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,0,0);
+                        boneList.add(bone);
+                        break;
+                    case("pteranodon"):
+                        //bone = new Pteranodon(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,0);
+                        //boneList.add(bone);
+                        break;
+                    case("pterodactyl"):
+                        bone = new Pterodactyl(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,true);
+                        boneList.add(bone);
+                        break;
+                    case("pterosaur"):
+                        //bone = new Pterosaur(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,0);
+                        //boneList.add(bone);
+                        break;
+                    case("shastasaurus"):
+                        bone = new Shastasaurus(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ",true,"flipper");
+                        boneList.add(bone);
+                        break;
+                    case("spinosaurus"):
+                        bone = new Spinosaurus(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,0);
+                        boneList.add(bone);
+                        break;
+                    case("triceratops"):
+                        bone = new Triceratops(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,0);
+                        boneList.add(bone);
+                        break;
+                    case("tyrannosaurusrex"):
+                        bone = new TyrannosaurusRex(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,0);
+                        boneList.add(bone);
+                        break;
+                    case("velociraptor"):
+                        bone = new Velociraptor(dinosaurName, 0, 0, price,0,0,0,0,lat,longitude," "," "," ", 0,0,"roar");
+                        boneList.add(bone);
+                        break;
+                    default:
+                        System.out.print("Please enter a correct bone");
+                }
+            }
+
+            /*if (dinosaurName.equals("Spinosaurus")){
+
+            }*/
+
+        }catch (Exception e){
+
+        }
+    }
+
+    public void displayMap(){                                       //Displays the map containing the Bone for sale
+        try {
+            for(Bone b : boneList) {
                 System.out.println(b.toString());
             }
             int centerTitle = (60-shopName.length())/2;
@@ -195,16 +307,16 @@ public class Seller {
     }
 
     public void integrateBonesWithMap(){                            //Finds what coordinate contains a bone
-        for(int i=0; i<boneList.size();i++){
-            Bones tempBone = boneList.get(i);
+        for(int i=0; i < boneList.size(); i++){
+            Bone tempBone = boneList.get(i);
             for(int k=0;k<coordList.size();k++){
                 Coordinate tempCoord = coordList.get(k);
                 int[] coordVals = Coordinate.getVals(tempCoord);
                 if(tempBone.getMapX()==coordVals[0] && tempBone.getMapY()==coordVals[1]){
-                    if(tempBone.isAvailable==true)
-                        tempCoord.available=1;
-                    else if(tempBone.isAvailable==false)
-                        tempCoord.available=0;
+                    if(tempBone.isAvailable() == true)
+                        tempCoord.available = 1;
+                    else if(tempBone.isAvailable() == false)
+                        tempCoord.available = 0;
                     coordList.set(k,tempCoord);
                 }
             }

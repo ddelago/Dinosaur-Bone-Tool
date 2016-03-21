@@ -1,23 +1,28 @@
+package Datastore;
+
 /**
  * Created by daniel on 2/5/16.
  */
-public class Coordinate {                                       //Coordinate class for the map points
+public class Coordinate {                                               //Coordinate class for the map points
 
-    int longitudeMap, latitudeMap, landOrWaterMap, available=-1;
+    int longitudeMap;
+    int latitudeMap;
+    int landOrWaterMap;
+    public int available = -1;
     double longitudeGlobe, latitudeGlobe;
 
-    public void loadMap(String newCoordData []){                //Parses data from map.txt
+    public void loadMap(String newCoordData []){                        //Parses data from map.txt
         longitudeMap = Integer.parseInt(newCoordData[0]);
         latitudeMap = Integer.parseInt(newCoordData[1]);
         landOrWaterMap = Integer.parseInt(newCoordData[2]);
     }
 
-    public static int[] getVals(Coordinate temp){               //Returns the values from a certain coordinate
+    public static int[] getVals(Coordinate temp){                       //Returns the values from a certain coordinate
         int[] coord = {temp.longitudeMap, temp.latitudeMap, temp.landOrWaterMap, temp.available };
         return coord;
     }
 
-    public static int longToX(double longitude){                //Converts longitude to x matrix points
+    public static int longToX(double longitude){                        //Converts longitude to x matrix points
         int mapX;
         longitude /= 6;
         if(longitude >= 0)
@@ -28,7 +33,7 @@ public class Coordinate {                                       //Coordinate cla
         return mapX;
     }
 
-    public static int latToY(double latitude){                  //Converts latitude to y matrix points
+    public static int latToY(double latitude){                          //Converts latitude to y matrix points
         int mapY;
         latitude /= 9;
         if(latitude > 0){
@@ -40,8 +45,4 @@ public class Coordinate {                                       //Coordinate cla
         mapY = (int)Math.round(latitude);
         return mapY;
     }
-
-    /*public void setAvailable(int available){
-        this.available = available;
-    }*/
 }
