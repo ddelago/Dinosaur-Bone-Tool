@@ -42,5 +42,5 @@ public class Coordinate {                                               //Coordi
             latitude = 9 + Math.abs(latitude);
         mapY = (int)Math.round(latitude);
         return mapY;
-    }
-}*/
+    }*/
+}

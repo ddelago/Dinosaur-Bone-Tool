@@ -38,8 +38,7 @@ public class Continents {
                                                                 //Every Bone. Bones should have Coordinate Attribute now
         if(continent[location.rowIndex][location.collIndex]==true)
             return true;
-        else
-            return false;
+        return false;
     }
 
     public void price(){

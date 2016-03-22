@@ -9,18 +9,18 @@ import Datastore.Coordinate;
  * 3/20/16.
  */
 public class SellerUser {
-    double mapX;
-    double mapY;
+    double longitude;
+    double latitude;
     String name;
 
     public SellerUser(double mapX, double mapY, String name) {
-        this.mapX = mapX;
-        this.mapY = mapY;
+        this.longitude = mapX;
+        this.latitude = mapY;
         this.name = name;
     }
 
     @Override
     public String toString() {
-        return mapX + "," + mapY + "," + name ;
+        return latitude + "," + latitude + "," + name ;
     }
 }
