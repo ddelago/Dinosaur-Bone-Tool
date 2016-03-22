@@ -9,9 +9,11 @@ import java.util.Scanner;
 public class Continents {
     public boolean [][] continent;
     public String contName;
+    public int priceIncrease;
+
     public Continents(String contName){
 
-        this.contName=contName.substring(0,(contName.length()-4));
+        this.contName=contName.substring(0,(contName.length()-4));      //Name of the continent
         File contFile = new File(contName);
 
         try{
@@ -34,13 +36,27 @@ public class Continents {
 
     public boolean onContinent(Coordinate location){            //Outside of this class have each continent loop through
                                                                 //Every Bone. Bones should have Coordinate Attribute now
-        if(continent[location.rowIndex][location.collIndex]==true){
-            //Add price Increase Function
-
+        if(continent[location.rowIndex][location.collIndex]==true)
             return true;
-        }
-
         else
             return false;
+    }
+
+    public void price(){
+
+        if (this.contName.equals("Africa"))
+            priceIncrease=3000;
+        else if (this.contName.equals("Antarctica"))
+            priceIncrease=100000;
+        else if (this.contName.equals("Asia"))
+            priceIncrease=4000;
+        else if (this.contName.equals("Australia"))
+            priceIncrease=5000;
+        else if (this.contName.equals("Europe"))
+            priceIncrease=1000;
+        else if (this.contName.equals("NorthAmerica"))
+            priceIncrease=1000;
+        else if (this.contName.equals("SouthAmerica"))
+            priceIncrease=3000;
     }
 }
