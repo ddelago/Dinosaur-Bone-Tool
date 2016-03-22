@@ -1,10 +1,11 @@
+package Datastore;
 /**
  * Created by daniel on 2/5/16.
  */
 public class Coordinate {                                               //Coordinate class for the map points
 
-    int rowIndex, collIndex, landOrWaterMap, available=-1;
-    double longitude, latitude;
+    public int rowIndex, collIndex, landOrWaterMap, available=-1;
+    public double longitude, latitude;
 
 
     public Coordinate(String newCoordData []){                                                //Parses data from map.txt

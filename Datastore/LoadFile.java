@@ -1,3 +1,4 @@
+package Datastore;
 /**
  * @author KoltenSturgill
  *
@@ -9,7 +10,7 @@ import java.util.Formatter;
 import java.util.Scanner;
 
 
-class LoadFile {                                            //Loads a bone file
+public class LoadFile {                                            //Loads a bone file
 
     Scanner fileContents;
     Formatter formatter;
@@ -23,9 +24,13 @@ class LoadFile {                                            //Loads a bone file
     }
 
     /* Right */
-
-    public ArrayList<Bones> loadBones() {                   //Adds the lines of the file as bone objects into a list
-        System.out.println("Loading bones...");
+    /**
+     * Regex Solution for CSV file split
+     * with commas by Achintya Jha
+     * http://stackoverflow.com/a/15739087/4151253
+     * */
+    public ArrayList<Bone> loadBones() {                   //Adds the lines of the file as bone objects into a list
+        System.out.println("Loading Bone...");
         ArrayList tempBones = new ArrayList();
 
 
@@ -34,7 +39,7 @@ class LoadFile {                                            //Loads a bone file
             String line = fileContents.nextLine();
             String[] parsed = line.split(",");
             if(parsed.length == 14) {
-                Bones bone = new Bones(parsed);
+                Bone bone = new Bone(parsed);
                 tempBones.add(bone);
                 //System.out.println(bone.toString());
             }

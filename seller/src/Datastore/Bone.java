@@ -1,4 +1,4 @@
-/**
+package Datastore; /**
  * @author KoltenSturgill
  *
  */
@@ -6,18 +6,49 @@
 import java.util.Scanner;
 
 
-class Bones {                                                   //Bone class for creating and adding bones to an arraylist
+public class Bone {
+
     boolean isAvailable=true;
-    int age, mapX, mapY, id;
-    float price, length, width, height, weight, latitude, longitude;
-    String condition, origin, prospector, name;
+    int age;
+    int mapX;
+    int mapY;
+    int id;
+    float price;
+    float length;
+    float width;
+    float height;
+    float weight;
+    float latitude;
+    float longitude;
+    String condition;
+    String origin;
+    String prospector;
+    String name;
     Scanner input;
 
-    public Bones() {
+    //Constructor for making Bone object
+    public Bone(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector) {
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.price = price;
+        this.length = length;
+        this.width = width;
+        this.height = height;
+        this.weight = weight;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.condition = condition;
+        this.origin = origin;
+        this.prospector = prospector;
+
+    }
+
+    public Bone() {
         input = new Scanner(System.in);
     }
 
-    public Bones(String csv[]) {                               //Creating a bone object from a csv file
+    public Bone(String csv[]) {                               //Creating a bone object from a csv file
         name = csv[0];
         age = Integer.parseInt(csv[1]);
         price = Float.parseFloat(csv[2]);
@@ -138,7 +169,7 @@ class Bones {                                                   //Bone class for
         this.price = price;
     }
 
-
+    // Getters and Setters
     public int getID(){                                        //Getters and Setters
         return id;
      }
@@ -149,6 +180,114 @@ class Bones {                                                   //Bone class for
 
     public int getMapY(){
         return mapY;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setMapX(int mapX) {
+        this.mapX = mapX;
+    }
+
+    public void setMapY(int mapY) {
+        this.mapY = mapY;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public float getLength() {
+        return length;
+    }
+
+    public void setLength(float length) {
+        this.length = length;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public void setWidth(float width) {
+        this.width = width;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    public String getProspector() {
+        return prospector;
+    }
+
+    public void setProspector(String prospector) {
+        this.prospector = prospector;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     @Override
@@ -168,6 +307,6 @@ class Bones {                                                   //Bone class for
             prospector +","+
             id + "," +
             isAvailable + "\n";
-
     }
+
 }
