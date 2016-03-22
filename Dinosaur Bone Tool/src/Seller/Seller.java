@@ -17,6 +17,7 @@ public class Seller {
     Scanner input;
     ArrayList<Coordinate> coordList;
     ArrayList<Bone> boneList;
+    ArrayList<Continents> contList;
     String shopName = "DK's Dino Shop";
     LoadFile file;
     String[] specificBones = {"amargasaurus","dakosaurus","giganotosaurus","hylaeosaurus","pteranodon","pterodactyl","pterosaur","shastasaurus","spinosaurus","triceratops","tyrannosaurusrex","velociraptor"};
@@ -26,7 +27,10 @@ public class Seller {
         input = new Scanner(System.in);
         coordList = new ArrayList();
         boneList = new ArrayList();
+        contList = new ArrayList();
         file = new LoadFile("text.csv");
+        loadContinents();
+
     }
     public void menu(){                                     //Seller Menu
         int choice;
@@ -93,6 +97,16 @@ public class Seller {
 
     }
 
+    public void loadContinents(){                                       //Loads and prepares the continents
+        Continents Africa = new Continents("Africa.txt");               contList.add(Africa);
+        Continents Antarctica = new Continents("Antarctica.txt");       contList.add(Antarctica);
+        Continents Asia = new Continents("Asia.txt");                   contList.add(Asia);
+        Continents Australia = new Continents("Australia.txt");         contList.add(Australia);
+        Continents Europe = new Continents("Europe.txt");               contList.add(Europe);
+        Continents NorthAmerica = new Continents("NorthAmerica.txt");   contList.add(NorthAmerica);
+        Continents SouthAmerica = new Continents("SouthAmerica.txt");   contList.add(SouthAmerica);
+
+    }
     public void loadMap(){                                              //Load the map from map.txt
 
         File mapFile = new File("Map.txt");
