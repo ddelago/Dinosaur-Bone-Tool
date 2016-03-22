@@ -76,8 +76,7 @@ public class Seller {
             while(fileIn.hasNext()){
                 String tempLine = fileIn.nextLine();
                 String coordData[] = tempLine.split(",");
-                Coordinate newCoord = new Coordinate();
-                newCoord.loadMap(coordData);
+                Coordinate newCoord = new Coordinate(coordData);
                 coordList.add(newCoord);
             }
             fileIn.close();
@@ -118,7 +117,7 @@ public class Seller {
                         continue;
                     for(int k=0;k<coordList.size();k++){
                         Coordinate tempCoord = coordList.get(k);
-                        int[] coordVals = Coordinate.getVals(tempCoord);
+                        int[] coordVals = tempCoord.getVals();
                         if(temp.getMapX()==coordVals[0] && temp.getMapY()==coordVals[1]){
                             tempCoord.available=-1;
                         }
@@ -146,7 +145,7 @@ public class Seller {
                         continue;
                     for(int k=0;k<coordList.size();k++){
                         Coordinate tempCoord = coordList.get(k);
-                        int[] coordVals = Coordinate.getVals(tempCoord);
+                        int[] coordVals = tempCoord.getVals();
                         if(b.getMapX()==coordVals[0] && b.getMapY()==coordVals[1]){
                             tempCoord.available=-1;
                         }
@@ -170,7 +169,7 @@ public class Seller {
             for(int i=0; i<20;i++){
                 for(int j=0;j<60;j++){
                     Coordinate tempCoord = coordList.get(sum);
-                    int[] coordVals = Coordinate.getVals(tempCoord);
+                    int[] coordVals = tempCoord.getVals();
                     if(coordVals[3]==0)
                         System.out.print("$");
                     else if(coordVals[3]==1)
@@ -199,7 +198,7 @@ public class Seller {
             Bones tempBone = boneList.get(i);
             for(int k=0;k<coordList.size();k++){
                 Coordinate tempCoord = coordList.get(k);
-                int[] coordVals = Coordinate.getVals(tempCoord);
+                int[] coordVals = tempCoord.getVals();
                 if(tempBone.getMapX()==coordVals[0] && tempBone.getMapY()==coordVals[1]){
                     if(tempBone.isAvailable==true)
                         tempCoord.available=1;

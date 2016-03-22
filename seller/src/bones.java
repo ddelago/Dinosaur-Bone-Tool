@@ -32,8 +32,8 @@ class Bones {                                                   //Bone class for
         prospector = csv[11];//.substring(0, csv[11].length() - 1);
         id = Integer.parseInt(csv[12]);
         isAvailable = Boolean.parseBoolean(csv[13]);
-        mapX = Coordinate.longToX(longitude);
-        mapY = Coordinate.latToY(latitude);
+        mapX = longToX(longitude);
+        mapY = latToY(latitude);
     }
 
     public void create(){                                     //Creating a bone object from the user
@@ -63,8 +63,8 @@ class Bones {                                                   //Bone class for
             System.out.print("Prospector: ");
             prospector = input.next();
 
-            mapX = Coordinate.longToX(longitude);
-            mapY = Coordinate.latToY(latitude);
+            mapX = longToX(longitude);
+            mapY = latToY(latitude);
 
         }
         catch(Exception e){
@@ -84,6 +84,29 @@ class Bones {                                                   //Bone class for
         mapY = Coordinate.latToY(latitude);
 
     }*/
+    public int longToX(double longitude){                        //Converts longitude to x matrix points
+        int mapX;
+        longitude /= 6;
+        if(longitude >= 0)
+            longitude +=29;
+        else if (longitude < 0)
+            longitude = 30+longitude;
+        mapX = (int)Math.round(longitude);
+        return mapX;
+    }
+
+    public int latToY(double latitude){                          //Converts latitude to y matrix points
+        int mapY;
+        latitude /= 9;
+        if(latitude > 0){
+            latitude *= -1;
+            latitude +=10;
+        }
+        else if (latitude <= 0)
+            latitude = 9 + Math.abs(latitude);
+        mapY = (int)Math.round(latitude);
+        return mapY;
+    }
     public void newLat(){
         Scanner input = new Scanner(System.in);
         System.out.format("%s","Please enter a new lat:");
