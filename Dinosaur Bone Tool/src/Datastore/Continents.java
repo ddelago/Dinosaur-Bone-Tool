@@ -8,9 +8,10 @@ import java.util.Scanner;
  */
 public class Continents {
     public boolean [][] continent;
-
+    public String contName;
     public Continents(String contName){
 
+        this.contName=contName.substring(0,(contName.length()-4));
         File contFile = new File(contName);
 
         try{
@@ -31,11 +32,15 @@ public class Continents {
         }
     }
 
-    public boolean onContinent(Coordinate location){            //Outside of this class have each bone loop through
-                                                            //Every Continent. Bones should have Coordinate Attribute now
-        
+    public boolean onContinent(Coordinate location){            //Outside of this class have each continent loop through
+                                                                //Every Bone. Bones should have Coordinate Attribute now
+        if(continent[location.rowIndex][location.collIndex]==true){
+            //Add price Increase Function
 
-        //if true, increase specific value
-        return true;
+            return true;
+        }
+
+        else
+            return false;
     }
 }
