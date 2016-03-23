@@ -112,7 +112,7 @@ public class Seller {
                 }
                 System.out.println(full);
                 Continents newCont = new Continents(full);
-                //contList.add(newCont);
+                contList.add(newCont);
             }
             catch(Exception e){
                 System.err.println("Caught Exception: " +  e.toString());

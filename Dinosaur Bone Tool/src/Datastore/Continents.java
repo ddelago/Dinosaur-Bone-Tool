@@ -8,12 +8,11 @@ import java.util.Scanner;
  * Created by daniel on 3/22/16.
  */
 public class Continents {
-    public boolean [][] continent;
+    public boolean [][] continent = new boolean[20][60];
     public String contName;
 
     public Continents(String contString){
         //this.contName=contName.substring(0,(contName.length()-4));
-
         for(int i=0;i<20;i++){
             for(int j=0;j<60;j++){              //And check every index
                 if(contString.charAt(i+j)=='1')          //For land
