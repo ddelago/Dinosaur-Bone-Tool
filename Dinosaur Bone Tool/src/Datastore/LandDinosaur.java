@@ -19,7 +19,7 @@ public class LandDinosaur extends Bone {
     public LandDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed) {
         super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name);
         this.speed = speed;
-        pricing(super.getCoordinate(), super.getPrice());
+        pricing(getCoordinate(), getPrice());
     }
 
     public double getSpeed() {
@@ -32,7 +32,8 @@ public class LandDinosaur extends Bone {
 
     @Override
     public float pricing(Coordinate coordinate, float p) {
-        System.out.printf("We recommend this price for this region: $\n Would you like to use this?\n");
+        Continents continents = new Continents(coordinate);
+        System.out.printf("We recommend this price for this region: $%f\n Would you like to use this?\n", continents.price());
         String response;
         Scanner in = new Scanner(System.in);
         float newPrice;

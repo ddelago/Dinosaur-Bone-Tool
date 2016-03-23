@@ -26,6 +26,7 @@ public abstract class Bone {
     String name;
     Scanner input;
     Coordinate coordinate;
+    Continents continent;
 
 
     public Bone(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name) {
@@ -42,18 +43,11 @@ public abstract class Bone {
         this.condition = condition;
         this.origin = origin;
         this.prospector = prospector;
-
         this.coordinate = new Coordinate(longitude, latitude);
-
         this.name = name;
-        //TODO:
-        //this.coordinate = new Coordinate(longitude, latitude);
+        this.continent = new Continents(coordinate);
 
     }
-
-    /*public Bone() {
-        input = new Scanner(System.in);
-    }*/
 
     public Bone(String csv[]) {                               //Creating a bone object from a csv file
         name = csv[0];
@@ -67,59 +61,11 @@ public abstract class Bone {
         width = Float.parseFloat(csv[8]);
         height = Float.parseFloat(csv[9]);
         weight = Float.parseFloat(csv[10]);
-        prospector = csv[11];//.substring(0, csv[11].length() - 1);
+        prospector = csv[11];
         id = Integer.parseInt(csv[12]);
         isAvailable = Boolean.parseBoolean(csv[13]);
-        //mapX = longToX(longitude);
-        //mapY = latToY(latitude);
+        coordinate = new Coordinate(longitude, latitude);
     }
-
-    /*public void create(){                                     //Creating a bone object from the user
-        try{
-            System.out.print("Enter the:\nLongitude of the bone: ");
-            longitude = input.nextFloat();
-            System.out.print("Latitude of the bone: ");
-            latitude = input.nextFloat();
-            System.out.print("Price of the bone: $");
-            price = input.nextFloat();
-            System.out.print("Identification number: ");
-            id = input.nextInt();
-            System.out.print("Species: ");
-            name = input.next();
-            System.out.print("Age (in millions): ");
-            age = input.nextInt();
-            System.out.print("Dimensions of the bone with a space between each entry(length width height): ");
-            length = input.nextFloat();
-            width = input.nextFloat();
-            height = input.nextFloat();
-            System.out.print("Weight of the bone in kilograms: ");
-            weight = input.nextFloat();
-            System.out.print("Condition (Poor, Fair, Good, Excellent): ");
-            condition = input.next();
-            System.out.print("Country of Origin: ");
-            origin = input.next();
-            System.out.print("Prospector: ");
-            prospector = input.next();
-
-        }
-        catch(Exception e){
-            System.out.println("An error has occurred when submitting your bone.");
-            System.out.println("Please try again");
-            create();
-        }
-    }*/
-
-    /*public void update(){                                       //Updates a bone with new values
-        System.out.print("Enter the new Latitude: ");
-        latitude = input.nextFloat();
-        System.out.print("Enter the new Longitude: ");
-        longitude = input.nextFloat();
-        System.out.print("Enter the new price: ");
-        price = input.nextFloat();
-        mapX = Coordinate.longToX(longitude);
-        mapY = Coordinate.latToY(latitude);
-
-    }*/
 
     public void newLat(){
         Scanner input = new Scanner(System.in);
@@ -144,7 +90,6 @@ public abstract class Bone {
     public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
-
     public void setLongitude(float longitude) {
         this.longitude = longitude;
     }

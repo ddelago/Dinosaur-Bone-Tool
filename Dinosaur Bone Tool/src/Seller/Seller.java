@@ -70,6 +70,7 @@ public class Seller {
                     break;
                 case 7:
                     setupUser();
+                    break;
                 case 8:
                     running = false;
                     break;
@@ -98,13 +99,13 @@ public class Seller {
     }
 
     public void loadContinents(){                                       //Loads and prepares the continents
-        Continents Africa = new Continents("./src/Datastore/Africa.txt");               contList.add(Africa);
-        Continents Antarctica = new Continents("./src/Datastore/Antarctica.txt");       contList.add(Antarctica);
-        Continents Asia = new Continents("./src/Datastore/Asia.txt");                   contList.add(Asia);
-        Continents Australia = new Continents("./src/Datastore/Australia.txt");         contList.add(Australia);
-        Continents Europe = new Continents("./src/Datastore/Europe.txt");               contList.add(Europe);
-        Continents NorthAmerica = new Continents("./src/Datastore/NorthAmerica.txt");   contList.add(NorthAmerica);
-        Continents SouthAmerica = new Continents("./src/Datastore/SouthAmerica.txt");   contList.add(SouthAmerica);
+        Continents Africa = new Continents("./src/Datastore/Africa.txt");               Continents.contList.add(Africa);
+        Continents Antarctica = new Continents("./src/Datastore/Antarctica.txt");       Continents.contList.add(Antarctica);
+        Continents Asia = new Continents("./src/Datastore/Asia.txt");                   Continents.contList.add(Asia);
+        Continents Australia = new Continents("./src/Datastore/Australia.txt");         Continents.contList.add(Australia);
+        Continents Europe = new Continents("./src/Datastore/Europe.txt");               Continents.contList.add(Europe);
+        Continents NorthAmerica = new Continents("./src/Datastore/NorthAmerica.txt");   Continents.contList.add(NorthAmerica);
+        Continents SouthAmerica = new Continents("./src/Datastore/SouthAmerica.txt");   Continents.contList.add(SouthAmerica);
 
     }
     public void loadMap(){                                              //Load the map from map.txt
@@ -284,6 +285,14 @@ public class Seller {
                 }
             }
 
+            /*for(Continents cont : contList){
+                for (Bone b : boneList){
+                    if(cont.onContinent(b.getCoordinate())){
+                        int inc = cont.priceIncrease;
+                        b.setPrice(price + inc);
+                    }
+                }
+            }
             /*if (dinosaurName.equals("Spinosaurus")){
 
             }*/
@@ -334,15 +343,19 @@ public class Seller {
     public void integrateBonesWithMap(){                            //Finds what coordinate contains a bone
         for(int i=0; i < boneList.size(); i++){
             Bone tempBone = boneList.get(i);
+            Coordinate boneCoord = tempBone.getCoordinate();
+
             for(int k=0;k<coordList.size();k++){
                 Coordinate tempCoord = coordList.get(k);
-                //int[] coordVals = Coordinate.getVals(tempCoord);
                 int[] coordVals = tempCoord.getVals();
-                if(tempBone.getMapX()==coordVals[0] && tempBone.getMapY()==coordVals[1]){
+
+                if(boneCoord.getRowIndex()==coordVals[0] && boneCoord.getCollIndex()==coordVals[1]){
+
                     if(tempBone.isAvailable())
                         tempCoord.available = 1;
                     else if(!tempBone.isAvailable())
                         tempCoord.available = 0;
+
                     coordList.set(k,tempCoord);
                 }
             }
@@ -350,7 +363,7 @@ public class Seller {
     }
 
     public void saveFile() throws IOException {                 //Saves file to text.csv
-        FileWriter outFile = new FileWriter("text.csv", false);
+        FileWriter outFile = new FileWriter("./src/Datastore/text.csv", false);
         BufferedWriter outStream = new BufferedWriter(outFile);
         for (int k = 0; k < boneList.size(); k++)
             try {
@@ -360,6 +373,7 @@ public class Seller {
                 outStream.write(line);
 
             } catch (IOException e) {
+                System.out.println("Skipped");
                 e.printStackTrace();
             }
         outStream.close();

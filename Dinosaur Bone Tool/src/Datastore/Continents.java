@@ -1,6 +1,7 @@
 package Datastore;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -10,11 +11,14 @@ public class Continents {
     public boolean [][] continent = new boolean[20][60];
     public String contName;
     public int priceIncrease;
+    public Coordinate coordinate;
+    public static ArrayList<Continents> contList;
 
     public Continents(String contName){
 
         this.contName=contName.substring(16,(contName.length()-4));      //Name of the continent
         price();
+
         try{
             Scanner fileIn = new Scanner(new File(contName));
             for(int i=0;i<20;i++){                  //For every row
@@ -33,17 +37,23 @@ public class Continents {
         }
     }
 
+    public Continents(Coordinate location){
+        onContinent(location);
+    }
+
     public boolean onContinent(Coordinate location){            //Outside of this class have each continent loop through
                                                                 //Every Bone. Bones should have Coordinate Attribute now
-        if(continent[location.rowIndex][location.collIndex]==true)
+        for //Add loop tp check which continents its in and return that cintirnenc 
+        if(continent[location.collIndex][location.rowIndex]==true)
             return true;
         return false;
     }
 
-    public void price(){
+    public float price(){
 
         if (this.contName.equals("Africa"))
             priceIncrease=3000;
+
         else if (this.contName.equals("Antarctica"))
             priceIncrease=100000;
         else if (this.contName.equals("Asia"))
@@ -56,5 +66,6 @@ public class Continents {
             priceIncrease=1000;
         else if (this.contName.equals("SouthAmerica"))
             priceIncrease=3000;
+        return priceIncrease;
     }
 }
