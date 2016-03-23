@@ -64,10 +64,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Seller.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Seller.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="16" selection-start="3772" selection-end="3772" vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="5895">
+            <state line="121" column="13" selection-start="4451" selection-end="4451" vertical-scroll-proportion="-5.129666" vertical-offset="4426" max-vertical-offset="5700">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,10 +75,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Continents.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Continents.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Datastore/Continents.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="68" selection-start="358" selection-end="358" vertical-scroll-proportion="0.31413612" vertical-offset="0" max-vertical-offset="615">
+            <state line="16" column="0" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
@@ -105,10 +105,12 @@
       <file leaf-file-name="Bone.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Datastore/Bone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="289" column="29" selection-start="7630" selection-end="7630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3645">
+            <state line="68" column="15" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="4665">
               <folding>
-                <element signature="e#7333#7334#0" expanded="true" />
-                <element signature="e#7377#7378#0" expanded="true" />
+                <element signature="method#setLatitude#0;class#Bone#0" expanded="true" />
+                <element signature="e#7092#7093#0" expanded="true" />
+                <element signature="e#7131#7132#0" expanded="true" />
+                <element signature="method#getCoordinate#0;class#Bone#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,8 +154,8 @@
         <option value="$PROJECT_DIR$/src/Datastore/Bone.java" />
         <option value="$PROJECT_DIR$/src/Datastore/Coordinate.java" />
         <option value="$PROJECT_DIR$/src/Datastore/LoadFile.java" />
-        <option value="$PROJECT_DIR$/src/Seller/Seller.java" />
         <option value="$PROJECT_DIR$/src/Datastore/Continents.java" />
+        <option value="$PROJECT_DIR$/src/Seller/Seller.java" />
       </list>
     </option>
   </component>
@@ -534,13 +536,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8639053" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14201184" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.112426035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18786982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -625,8 +627,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="19" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="4665">
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
+            <element signature="method#setLatitude#0;class#Bone#0" expanded="true" />
+            <element signature="e#7092#7093#0" expanded="true" />
+            <element signature="e#7131#7132#0" expanded="true" />
+            <element signature="method#getCoordinate#0;class#Bone#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -693,8 +697,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="19" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="4665">
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
+            <element signature="method#setLatitude#0;class#Bone#0" expanded="true" />
+            <element signature="e#7092#7093#0" expanded="true" />
+            <element signature="e#7131#7132#0" expanded="true" />
+            <element signature="method#getCoordinate#0;class#Bone#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -733,8 +739,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="19" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="4665">
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
+            <element signature="method#setLatitude#0;class#Bone#0" expanded="true" />
+            <element signature="e#7092#7093#0" expanded="true" />
+            <element signature="e#7131#7132#0" expanded="true" />
+            <element signature="method#getCoordinate#0;class#Bone#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,8 +781,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="19" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="4425">
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
+            <element signature="method#setLatitude#0;class#Bone#0" expanded="true" />
+            <element signature="e#7092#7093#0" expanded="true" />
+            <element signature="e#7131#7132#0" expanded="true" />
+            <element signature="method#getCoordinate#0;class#Bone#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -799,8 +809,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="19" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="4770">
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
+            <element signature="method#setLatitude#0;class#Bone#0" expanded="true" />
+            <element signature="e#7092#7093#0" expanded="true" />
+            <element signature="e#7131#7132#0" expanded="true" />
+            <element signature="method#getCoordinate#0;class#Bone#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -902,18 +914,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/LoadFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2160">
+        <state line="56" column="0" selection-start="1472" selection-end="1472" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2160">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/Bone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="289" column="29" selection-start="7630" selection-end="7630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3645">
-          <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7377#7378#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -931,19 +933,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
+    <entry file="file://$PROJECT_DIR$/src/Datastore/Bone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="16" selection-start="3772" selection-end="3772" vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="5895">
+        <state line="68" column="15" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="4665">
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#setLatitude#0;class#Bone#0" expanded="true" />
+            <element signature="e#7092#7093#0" expanded="true" />
+            <element signature="e#7131#7132#0" expanded="true" />
+            <element signature="method#getCoordinate#0;class#Bone#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/Continents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="68" selection-start="358" selection-end="358" vertical-scroll-proportion="0.31413612" vertical-offset="0" max-vertical-offset="615">
+        <state line="16" column="0" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="13" selection-start="4451" selection-end="4451" vertical-scroll-proportion="-5.129666" vertical-offset="4426" max-vertical-offset="5700">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

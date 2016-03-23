@@ -98,31 +98,18 @@ public class Seller {
     }
 
     public void loadContinents(){                                       //Loads and prepares the continents
-        String [] conts = {"Africa.txt","Antarctica.txt","Asia.txt","Australia.txt","Europe.txt","NorthAmerica.txt","SouthAmerica.txt"};
-        for(int i=0;i<7;i++){
-            String contFile="./src/Datastore/"+conts[i];
-            try{
-                Scanner inT = new Scanner(new File(contFile));
-                String full="";
+        Continents Africa = new Continents("./src/Datastore/Africa.txt");               contList.add(Africa);
+        Continents Antarctica = new Continents("./src/Datastore/Antarctica.txt");       contList.add(Antarctica);
+        Continents Asia = new Continents("./src/Datastore/Asia.txt");                   contList.add(Asia);
+        Continents Australia = new Continents("./src/Datastore/Australia.txt");         contList.add(Australia);
+        Continents Europe = new Continents("./src/Datastore/Europe.txt");               contList.add(Europe);
+        Continents NorthAmerica = new Continents("./src/Datastore/NorthAmerica.txt");   contList.add(NorthAmerica);
+        Continents SouthAmerica = new Continents("./src/Datastore/SouthAmerica.txt");   contList.add(SouthAmerica);
 
-                while (inT.hasNextLine()){
-                    String line = inT.nextLine();
-                    //System.out.println(line);
-                    full = full+ line;
-                }
-                System.out.println(full);
-                Continents newCont = new Continents(full);
-                contList.add(newCont);
-            }
-            catch(Exception e){
-                System.err.println("Caught Exception: " +  e.toString());
-            }
-        }
     }
-
     public void loadMap(){                                              //Load the map from map.txt
 
-        File mapFile = new File("Map.txt");
+        File mapFile = new File("./src/Datastore/Map.txt");
 
         try{
             Scanner fileIn = new Scanner(mapFile);
