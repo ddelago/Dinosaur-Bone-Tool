@@ -8,10 +8,16 @@ public class Coordinate {                                               //Coordi
     public double longitude, latitude;
 
 
-    public Coordinate(String newCoordData []){                                                //Parses data from map.txt
+    public Coordinate(String newCoordData []){                          //Parses data from map.txt
         rowIndex = Integer.parseInt(newCoordData[0]);
         collIndex = Integer.parseInt(newCoordData[1]);
         landOrWaterMap = Integer.parseInt(newCoordData[2]);
+    }
+
+    public Coordinate(double longitude, double latitude){
+
+
+
     }
 
     public int[] getVals(){                                     //Returns the values from a certain coordinate
@@ -20,7 +26,7 @@ public class Coordinate {                                               //Coordi
     }
 
 
-    /*public int longToX(double longitude){                        //Converts longitude to x matrix points
+    public int longToX(double longitude){                        //Converts longitude to x matrix points
         int mapX;
         longitude /= 6;
         if(longitude >= 0)
@@ -42,5 +48,5 @@ public class Coordinate {                                               //Coordi
             latitude = 9 + Math.abs(latitude);
         mapY = (int)Math.round(latitude);
         return mapY;
-    }*/
+    }
 }

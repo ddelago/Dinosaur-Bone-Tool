@@ -1,30 +1,31 @@
 package Datastore; /**
- * @author KoltenSturgill
- *
- */
+    * @author KoltenSturgill
+    *
+            */
 
-import java.util.Scanner;
+            import java.util.Scanner;
 
 
-public class Bone {
+    public class Bone {
 
-    boolean isAvailable=true;
-    int age;
-    int mapX;
-    int mapY;
-    int id;
-    float price;
-    float length;
-    float width;
-    float height;
-    float weight;
-    float latitude;
-    float longitude;
-    String condition;
-    String origin;
-    String prospector;
-    String name;
-    Scanner input;
+        boolean isAvailable=true;
+        int age;
+        int mapX;
+        int mapY;
+        int id;
+        float price;
+        float length;
+        float width;
+        float height;
+        float weight;
+        float latitude;
+        float longitude;
+        String condition;
+        String origin;
+        String prospector;
+        String name;
+        Scanner input;
+        Coordinate coordinate;
 
     //Constructor for making Bone object
     public Bone(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector) {
@@ -42,6 +43,7 @@ public class Bone {
         this.origin = origin;
         this.prospector = prospector;
 
+        this.coordinate = new Coordinate(longitude, latitude);
     }
 
     public Bone() {
@@ -94,9 +96,6 @@ public class Bone {
             System.out.print("Prospector: ");
             prospector = input.next();
 
-            mapX = longToX(longitude);
-            mapY = latToY(latitude);
-
         }
         catch(Exception e){
             System.out.println("An error has occurred when submitting your bone.");
@@ -115,29 +114,7 @@ public class Bone {
         mapY = Coordinate.latToY(latitude);
 
     }*/
-    public int longToX(double longitude){                        //Converts longitude to x matrix points
-        int mapX;
-        longitude /= 6;
-        if(longitude >= 0)
-            longitude +=29;
-        else if (longitude < 0)
-            longitude = 30+longitude;
-        mapX = (int)Math.round(longitude);
-        return mapX;
-    }
 
-    public int latToY(double latitude){                          //Converts latitude to y matrix points
-        int mapY;
-        latitude /= 9;
-        if(latitude > 0){
-            latitude *= -1;
-            latitude +=10;
-        }
-        else if (latitude <= 0)
-            latitude = 9 + Math.abs(latitude);
-        mapY = (int)Math.round(latitude);
-        return mapY;
-    }
     public void newLat(){
         Scanner input = new Scanner(System.in);
         System.out.format("%s","Please enter a new lat:");
