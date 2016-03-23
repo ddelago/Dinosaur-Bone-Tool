@@ -10,16 +10,8 @@ public class Continents {
     public boolean [][] continent = new boolean[20][60];
     public String contName;
     public int priceIncrease;
-<<<<<<< HEAD
 
     public Continents(String contName){
-
-        this.contName=contName.substring(0,(contName.length()-4));      //Name of the continent
-        File contFile = new File(contName);
-=======
-
-    public Continents(String contName){
->>>>>>> origin/update
 
         this.contName=contName.substring(16,(contName.length()-4));      //Name of the continent
         price();
@@ -42,11 +34,7 @@ public class Continents {
     }
 
     public boolean onContinent(Coordinate location){            //Outside of this class have each continent loop through
-<<<<<<< HEAD
                                                                 //Every Bone. Bones should have Coordinate Attribute now
-=======
-        //Every Bone. Bones should have Coordinate Attribute now
->>>>>>> origin/update
         if(continent[location.rowIndex][location.collIndex]==true)
             return true;
         return false;
