@@ -11,8 +11,13 @@ import java.util.Random;
 public class TyrannosaurusRex extends LandCarnivore {
     int smellingRange = randomInteger(1,5);
 
-    public TyrannosaurusRex(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double groundSpeed, int smellingRange) {
-        super(name,age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, speed, groundSpeed);
+    /*public TyrannosaurusRex(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double groundSpeed, int smellingRange) {
+        super(name,age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable, coordinate, speed, groundSpeed);
+        this.smellingRange = smellingRange;
+    }*/
+
+    public TyrannosaurusRex(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double groundSpeed, int smellingRange) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed, groundSpeed);
         this.smellingRange = smellingRange;
     }
 

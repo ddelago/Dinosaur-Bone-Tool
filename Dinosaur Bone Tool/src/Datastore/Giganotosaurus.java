@@ -8,8 +8,13 @@ package Datastore;
  */
 public class Giganotosaurus extends LandCarnivore {
 
-    public Giganotosaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double groundSpeed) {
-        super(name,age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, speed, groundSpeed);
+    /*public Giganotosaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector,boolean isAvailable, Coordinate coordinate, double speed, double groundSpeed) {
+        super(name,age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable, coordinate, speed, groundSpeed);
+        poorLittleMe();
+    }*/
+
+    public Giganotosaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double groundSpeed) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed, groundSpeed);
         poorLittleMe();
     }
 

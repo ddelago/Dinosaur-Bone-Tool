@@ -1,6 +1,7 @@
 package Datastore;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Kolten Sturgill
@@ -12,8 +13,16 @@ public class SeaCarnivore extends SeaDinosaur {
 
     String methodOfPropulsion = label(randomInteger(0, 2));
 
-    public SeaCarnivore(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean saltWater, String methodOfPropulsion) {
+    /*public SeaCarnivore(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean isAvailable, Coordinate coordinate, boolean saltWater, String methodOfPropulsion) {
         super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, saltWater);
+        this.methodOfPropulsion = label(randomInteger(0, 2));
+        System.out.print(getMethodOfPropulsion());
+    }*/
+
+    public SeaCarnivore(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name,boolean saltWater, String methodOfPropulsion) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, saltWater);
+        pricing(super.getCoordinate(), super.getPrice());
+        this.methodOfPropulsion = methodOfPropulsion;
         this.methodOfPropulsion = label(randomInteger(0, 2));
         System.out.print(getMethodOfPropulsion());
     }
@@ -44,5 +53,26 @@ public class SeaCarnivore extends SeaDinosaur {
 
     public void setMethodOfPropulsion(String methodOfPropulsion) {
         this.methodOfPropulsion = methodOfPropulsion;
+    }
+
+    @Override
+    public float pricing(Coordinate coordinate, float p) {
+        System.out.printf("We recommend this price for this region: $\n Would you like to use this?\n");
+        String response;
+        Scanner in = new Scanner(System.in);
+        float newPrice;
+        try {
+            response = in.next();
+            if (response.equals("yes")) {
+                return price;
+            } else {
+                System.out.print("What would you like to set the price as?");
+                newPrice = in.nextFloat();
+                price = newPrice;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return price;
     }
 }

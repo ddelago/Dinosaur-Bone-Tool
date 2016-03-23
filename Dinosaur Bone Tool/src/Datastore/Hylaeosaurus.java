@@ -12,12 +12,18 @@ public class Hylaeosaurus extends LandHerbivore {
     int armorThicknessLeft;
     int armorThicknessRight;
 
-    public Hylaeosaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double gait, int armorThicknessLeft, int armorThicknessRight) {
-        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, speed, gait);
+    /*public Hylaeosaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double gait, int armorThicknessLeft, int armorThicknessRight) {
+        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable, coordinate, speed, gait);
         this.armorThicknessLeft = randomIntegerLeft(1,3);
         this.armorThicknessRight = randomIntegerRight(1,3);
         System.out.print("Armor thickness left: " + getArmorThicknessLeft() + "\n");
         System.out.print("Armor thickness right: " + getArmorThicknessRight() + "\n");
+    }*/
+
+    public Hylaeosaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double gait, int armorThicknessLeft, int armorThicknessRight) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed, gait);
+        this.armorThicknessLeft = armorThicknessLeft;
+        this.armorThicknessRight = armorThicknessRight;
     }
 
     public int getArmorThicknessLeft() {
@@ -35,6 +41,7 @@ public class Hylaeosaurus extends LandHerbivore {
     public void setArmorThicknessRight(int armorThicknessRight) {
         this.armorThicknessRight = armorThicknessRight;
     }
+
     //Random number generator, sets right armor thickness
     private int randomIntegerRight(int min, int max) {
         Random rand = new Random();

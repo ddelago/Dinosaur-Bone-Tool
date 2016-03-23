@@ -1,7 +1,9 @@
-/**
+package buyer; /**
  * Daniel Delago    1/28/2016
  * Seller Program
  */
+import Datastore.*;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -13,7 +15,7 @@ public class Buyer {                                        //Buyer Class
 
     Scanner input;
     ArrayList<Coordinate> coordList;
-    ArrayList<Bones> boneList;
+    ArrayList<Bone> boneList;
     LoadFile file;
 
     public Buyer(){
@@ -51,7 +53,7 @@ public class Buyer {                                        //Buyer Class
                     break;
                 case 5:
                     boneList=file.loadBones();
-                    for(Bones b : boneList) {
+                    for(Bone b : boneList) {
                         System.out.println(b.toString());
                     }
                     break;
@@ -71,8 +73,9 @@ public class Buyer {                                        //Buyer Class
             while(fileIn.hasNext()){
                 String tempLine = fileIn.nextLine();
                 String coordData[] = tempLine.split(",");
-                Coordinate newCoord = new Coordinate();
-                newCoord.loadMap(coordData);
+                //Coordinate newCoord = new Coordinate();
+                Coordinate newCoord = new Coordinate(coordData);
+                //loadMap(coordData);
                 coordList.add(newCoord);
             }
             fileIn.close();
@@ -94,7 +97,8 @@ public class Buyer {                                        //Buyer Class
             for(int i=0; i<20;i++){
                 for(int j=0;j<60;j++){
                     Coordinate tempCoord = coordList.get(sum);
-                    int[] coordVals = Coordinate.getVals(tempCoord);
+                    //int[] coordVals = Coordinate.getVals(tempCoord);
+                    int[] coordVals = tempCoord.getVals();
                     if(coordVals[3]==0)
                         System.out.print("$");
                     else if(coordVals[3]==1)
@@ -124,8 +128,8 @@ public class Buyer {                                        //Buyer Class
         System.out.println("----------------------------------------------------");
         System.out.println("|ID|          Bones for Sale           |   Price   |");
         System.out.println("----------------------------------------------------");
-        for(Bones b : boneList) {
-            System.out.printf("|%2d|%-35s|$%-10.2f|%n",b.id,b.name,b.price);
+        for(Bone b : boneList) {
+            System.out.printf("|%2d|%-35s|$%-10.2f|%n",b.getID(),b.getName(),b.getPrice());
         }
         System.out.println("----------------------------------------------------");
         System.out.print("Select a bone to purchase by entering it's ID or -1 to quit: ");
@@ -136,10 +140,11 @@ public class Buyer {                                        //Buyer Class
         selection2 = input.next();
         if(selection2.compareTo("No")==0)
             buyBone();
-        for(Bones b : boneList) {
-            if(b.id==selection){
-                System.out.println("You have just purchased a " + b.name + "!\n");
-                b.isAvailable=false;
+        for(Bone b : boneList) {
+            if(b.getID() == selection){
+                System.out.println("You have just purchased a " + b.getName() + "!\n");
+                //TODO: Check that this is correct.
+                b.setAvailable(false);
                 break;
             }
         }
@@ -147,14 +152,15 @@ public class Buyer {                                        //Buyer Class
 
     public void integrateBonesWithMap(){                                //Finds what coordinates contain a bone.
         for(int i=0; i<boneList.size();i++){
-            Bones tempBone = boneList.get(i);
+            Bone tempBone = boneList.get(i);
             for(int k=0;k<coordList.size();k++){
                 Coordinate tempCoord = coordList.get(k);
-                int[] coordVals = Coordinate.getVals(tempCoord);
+                //int[] coordVals = Coordinate.getVals(tempCoord);
+                int[] coordVals = tempCoord.getVals();
                 if(tempBone.getMapX()==coordVals[0] && tempBone.getMapY()==coordVals[1]){
-                    if(tempBone.isAvailable==true)
+                    if(tempBone.isAvailable())
                         tempCoord.available=1;
-                    else if(tempBone.isAvailable==false)
+                    else if(!tempBone.isAvailable())
                         tempCoord.available=0;
                     coordList.set(k,tempCoord);
                 }
