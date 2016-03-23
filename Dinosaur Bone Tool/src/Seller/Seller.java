@@ -28,7 +28,8 @@ public class Seller {
         coordList = new ArrayList();
         boneList = new ArrayList();
         contList = new ArrayList();
-        file = new LoadFile("text.csv");
+        file = new LoadFile("./src/Datastore/text.csv");
+
         loadContinents();
     }
     public void menu(){                                     //Seller Menu
@@ -97,14 +98,26 @@ public class Seller {
     }
 
     public void loadContinents(){                                       //Loads and prepares the continents
-        Continents Africa = new Continents("Africa.txt");               contList.add(Africa);
-        Continents Antarctica = new Continents("Antarctica.txt");       contList.add(Antarctica);
-        Continents Asia = new Continents("Asia.txt");                   contList.add(Asia);
-        Continents Australia = new Continents("Australia.txt");         contList.add(Australia);
-        Continents Europe = new Continents("Europe.txt");               contList.add(Europe);
-        Continents NorthAmerica = new Continents("NorthAmerica.txt");   contList.add(NorthAmerica);
-        Continents SouthAmerica = new Continents("SouthAmerica.txt");   contList.add(SouthAmerica);
+        String [] conts = {"Africa.txt","Antarctica.txt","Asia.txt","Australia.txt","Europe.txt","NorthAmerica.txt","SouthAmerica.txt"};
+        for(int i=0;i<7;i++){
+            String contFile="./src/Datastore/"+conts[i];
+            try{
+                Scanner inT = new Scanner(new File(contFile));
+                String full="";
 
+                while (inT.hasNextLine()){
+                    String line = inT.nextLine();
+                    //System.out.println(line);
+                    full = full+ line;
+                }
+                System.out.println(full);
+                Continents newCont = new Continents(full);
+                //contList.add(newCont);
+            }
+            catch(Exception e){
+                System.err.println("Caught Exception: " +  e.toString());
+            }
+        }
     }
 
     public void loadMap(){                                              //Load the map from map.txt
@@ -230,6 +243,7 @@ public class Seller {
                         Amargasaurus amargasaurus = new Amargasaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"");
                         boneList.add(amargasaurus);
                         break;
+
                     case("dakosaurus"):
                         Dakosaurus dakosaurus = new Dakosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,true,"feet");
                         dakosaurus.getMethodOfPropulsion();

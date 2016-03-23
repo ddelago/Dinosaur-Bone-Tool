@@ -1,6 +1,7 @@
 package Datastore;
 
 import java.io.File;
+import java.io.FileReader;
 import java.util.Scanner;
 
 /**
@@ -9,26 +10,17 @@ import java.util.Scanner;
 public class Continents {
     public boolean [][] continent;
     public String contName;
-    public Continents(String contName){
 
-        this.contName=contName.substring(0,(contName.length()-4));
-        File contFile = new File(contName);
+    public Continents(String contString){
+        //this.contName=contName.substring(0,(contName.length()-4));
 
-        try{
-            Scanner fileIn = new Scanner(contFile);
-            for(int i=0;i<20;i++){                  //For every row
-                String row = fileIn.nextLine();     //Take in that entire row
-                for(int j=0;j<60;j++){              //And check every index
-                    if(row.charAt(j)=='1')          //For land
-                        continent[i][j]=true;
-                    else                            //Or water
-                        continent[i][j]=false;
-                }
+        for(int i=0;i<20;i++){
+            for(int j=0;j<60;j++){              //And check every index
+                if(contString.charAt(i+j)=='1')          //For land
+                    continent[i][j]=true;
+                else                            //Or water
+                    continent[i][j]=false;
             }
-            fileIn.close();
-        }
-        catch(Exception e){
-            System.out.println("File Error"); //No user input so there should be no error
         }
     }
 
