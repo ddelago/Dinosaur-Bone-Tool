@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Created by daniel on 3/22/16.
  */
 public class Continents {
-    public boolean [][] continent;
+    public boolean [][] continent = new boolean[20][60];
     public String contName;
     public int priceIncrease;
 
