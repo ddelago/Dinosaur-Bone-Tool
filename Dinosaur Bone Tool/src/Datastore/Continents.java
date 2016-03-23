@@ -13,8 +13,8 @@ public class Continents {
 
     public Continents(String contName){
 
-        this.contName=contName.substring(0,(contName.length()-4));      //Name of the continent
-
+        this.contName=contName.substring(16,(contName.length()-4));      //Name of the continent
+        price();
         try{
             Scanner fileIn = new Scanner(new File(contName));
             for(int i=0;i<20;i++){                  //For every row
