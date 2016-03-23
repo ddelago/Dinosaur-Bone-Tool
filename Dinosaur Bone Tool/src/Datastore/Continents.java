@@ -10,14 +10,21 @@ public class Continents {
     public boolean [][] continent = new boolean[20][60];
     public String contName;
     public int priceIncrease;
+<<<<<<< HEAD
 
     public Continents(String contName){
 
         this.contName=contName.substring(0,(contName.length()-4));      //Name of the continent
         File contFile = new File(contName);
+=======
 
+    public Continents(String contName){
+>>>>>>> origin/update
+
+        this.contName=contName.substring(16,(contName.length()-4));      //Name of the continent
+        price();
         try{
-            Scanner fileIn = new Scanner(contFile);
+            Scanner fileIn = new Scanner(new File(contName));
             for(int i=0;i<20;i++){                  //For every row
                 String row = fileIn.nextLine();     //Take in that entire row
                 for(int j=0;j<60;j++){              //And check every index
@@ -35,7 +42,11 @@ public class Continents {
     }
 
     public boolean onContinent(Coordinate location){            //Outside of this class have each continent loop through
+<<<<<<< HEAD
                                                                 //Every Bone. Bones should have Coordinate Attribute now
+=======
+        //Every Bone. Bones should have Coordinate Attribute now
+>>>>>>> origin/update
         if(continent[location.rowIndex][location.collIndex]==true)
             return true;
         return false;

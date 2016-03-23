@@ -1,35 +1,35 @@
-package Datastore; /**
+package Datastore;
+/**
     * @author KoltenSturgill
     *
-            */
+*/
+import java.util.Scanner;
 
-            import java.util.Scanner;
+
+public abstract class Bone {
+
+    boolean isAvailable = true;
+    int age;
+    int mapX;
+    int mapY;
+    int id;
+    float price;
+    float length;
+    float width;
+    float height;
+    float weight;
+    double latitude;
+    double longitude;
+    String condition;
+    String origin;
+    String prospector;
+    String name;
+    Scanner input;
+    Coordinate coordinate;
 
 
-    public class Bone {
-
-        boolean isAvailable=true;
-        int age;
-        int mapX;
-        int mapY;
-        int id;
-        float price;
-        float length;
-        float width;
-        float height;
-        float weight;
-        float latitude;
-        float longitude;
-        String condition;
-        String origin;
-        String prospector;
-        String name;
-        Scanner input;
-        Coordinate coordinate;
-
-    //Constructor for making Bone object
-    public Bone(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector) {
-        this.name = name;
+    public Bone(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name) {
+        this.isAvailable = isAvailable;
         this.age = age;
         this.id = id;
         this.price = price;
@@ -44,11 +44,16 @@ package Datastore; /**
         this.prospector = prospector;
 
         this.coordinate = new Coordinate(longitude, latitude);
+
+        this.name = name;
+        //TODO:
+        //this.coordinate = new Coordinate(longitude, latitude);
+
     }
 
-    public Bone() {
+    /*public Bone() {
         input = new Scanner(System.in);
-    }
+    }*/
 
     public Bone(String csv[]) {                               //Creating a bone object from a csv file
         name = csv[0];
@@ -65,11 +70,11 @@ package Datastore; /**
         prospector = csv[11];//.substring(0, csv[11].length() - 1);
         id = Integer.parseInt(csv[12]);
         isAvailable = Boolean.parseBoolean(csv[13]);
-        mapX = longToX(longitude);
-        mapY = latToY(latitude);
+        //mapX = longToX(longitude);
+        //mapY = latToY(latitude);
     }
 
-    public void create(){                                     //Creating a bone object from the user
+    /*public void create(){                                     //Creating a bone object from the user
         try{
             System.out.print("Enter the:\nLongitude of the bone: ");
             longitude = input.nextFloat();
@@ -102,7 +107,8 @@ package Datastore; /**
             System.out.println("Please try again");
             create();
         }
-    }
+    }*/
+
     /*public void update(){                                       //Updates a bone with new values
         System.out.print("Enter the new Latitude: ");
         latitude = input.nextFloat();
@@ -219,11 +225,11 @@ package Datastore; /**
         this.weight = weight;
     }
 
-    public float getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public float getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
@@ -267,6 +273,16 @@ package Datastore; /**
         isAvailable = available;
     }
 
+    public abstract float pricing(Coordinate coordinate, float price);
+
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
+
     @Override
     public String toString() {                                  //Used for converting the values back into a csv file
         return
@@ -285,5 +301,7 @@ package Datastore; /**
             id + "," +
             isAvailable + "\n";
     }
+
+
 
 }

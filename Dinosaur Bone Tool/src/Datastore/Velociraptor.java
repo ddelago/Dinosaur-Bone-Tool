@@ -1,6 +1,5 @@
 package Datastore;
 
-import java.util.Formatter;
 import java.util.Random;
 
 /**
@@ -12,8 +11,14 @@ import java.util.Random;
 public class Velociraptor extends LandCarnivore {
     String size;
 
-    public Velociraptor(String name, int age,int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double groundSpeed, String size) {
-        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, speed, groundSpeed);
+    /*public Velociraptor(String name, int age,int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double groundSpeed, String size) {
+        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable, coordinate, speed, groundSpeed);
+        this.size = printSize(randomInteger(0, 2));
+        System.out.print("Size of Velociraptor: " + getSize() + "\n");
+    }*/
+
+    public Velociraptor(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double groundSpeed, String size) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed, groundSpeed);
         this.size = printSize(randomInteger(0, 2));
         System.out.print("Size of Velociraptor: " + getSize() + "\n");
     }

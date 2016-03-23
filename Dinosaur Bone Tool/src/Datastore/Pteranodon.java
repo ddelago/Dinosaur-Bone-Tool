@@ -27,25 +27,58 @@ public class Pteranodon extends AirCarnivore {
     Formatter output;
     Scanner input;
 
-    public Pteranodon(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double wingspan, int numberOfTeeth, boolean availabilityOfSaddle, double costOfSaddle) {
+    /*public Pteranodon(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double wingspan, int numberOfTeeth, boolean availabilityOfSaddle, double costOfSaddle) {
         super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, wingspan, numberOfTeeth);
+        this.availabilityOfSaddle = availabilityOfSaddle;
+        this.costOfSaddle = costOfSaddle + 1000;
+        specialOffer(price);
+    }*/
+
+    public Pteranodon(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double wingspan, int numberOfTeeth, boolean availabilityOfSaddle, double costOfSaddle, String answer) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name,  wingspan, numberOfTeeth);
         this.availabilityOfSaddle = availabilityOfSaddle;
         this.costOfSaddle = costOfSaddle + 1000;
         specialOffer(price);
     }
 
+    public boolean isAvailabilityOfSaddle() {
+        return availabilityOfSaddle;
+    }
+
+    public void setAvailabilityOfSaddle(boolean availabilityOfSaddle) {
+        this.availabilityOfSaddle = availabilityOfSaddle;
+    }
+
+    public double getCostOfSaddle() {
+        return costOfSaddle;
+    }
+
+    public void setCostOfSaddle(double costOfSaddle) {
+        this.costOfSaddle = costOfSaddle;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
     public float specialOffer(float price) {
-        if (!availabilityOfSaddle){
+        if (availabilityOfSaddle){
         output.format("We have a special offer of a saddle with this bone, would you like to take advantage of it?\n");
-        answer = input.next();
+        answer = input.next().toLowerCase();
         switch (answer) {
             case ("yes"):
+                setAnswer(answer);
                 price = price + 1000;
                 return price;
             case ("no"):
+                setAnswer(answer);
                 break;
             default:
-                return price;
+                setAnswer("no");
         }
 
         }

@@ -11,10 +11,15 @@ import java.util.Random;
 public class Amargasaurus extends LandHerbivore {
     String downloadCode;
 
-    public Amargasaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double gait, String downloadCode) {
-        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, speed, gait);
+    /*public Amargasaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean isAvailable, Coordinate coordinate, double speed, double gait, String downloadCode) {
+        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable, coordinate, speed, gait);
         this.downloadCode = randomDownloadCode();
         System.out.print("Your free download code: " + getDownloadCode().toUpperCase());
+    }*/
+
+    public Amargasaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double gait, String downloadCode) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed, gait);
+        this.downloadCode = downloadCode;
     }
 
     public String getDownloadCode() {
@@ -41,5 +46,4 @@ public class Amargasaurus extends LandHerbivore {
         setDownloadCode(sb.toString());
         return sb.toString();
     }
-
 }

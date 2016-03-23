@@ -9,8 +9,8 @@ package Datastore;
 public class LandCarnivore extends LandDinosaur {
     double groundSpeed;
 
-    public LandCarnivore(String name,int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double groundSpeed) {
-        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, speed);
+    public LandCarnivore(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double groundSpeed) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed);
         this.groundSpeed = groundSpeed;
     }
 

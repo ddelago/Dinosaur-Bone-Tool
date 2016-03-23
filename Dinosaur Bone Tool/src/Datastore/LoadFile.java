@@ -39,7 +39,12 @@ public class LoadFile {                                            //Loads a bon
             String line = fileContents.nextLine();
             String[] parsed = line.split(",");
             if(parsed.length == 14) {
-                Bone bone = new Bone(parsed);
+                Bone bone = new Bone(parsed) {
+                    @Override
+                    public float pricing(Coordinate coordinate, float price) {
+                        return 0;
+                    }
+                };
                 tempBones.add(bone);
                 //System.out.println(bone.toString());
             }

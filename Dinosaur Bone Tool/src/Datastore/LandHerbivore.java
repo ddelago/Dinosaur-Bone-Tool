@@ -9,8 +9,13 @@ package Datastore;
 public class LandHerbivore extends LandDinosaur {
     double gait;
 
-    public LandHerbivore(String name,int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double speed, double gait) {
+    /*public LandHerbivore(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean isAvailable, Coordinate coordinate, double speed, double gait) {
         super(name,age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, speed);
+        this.gait = gait;
+    }*/
+
+    public LandHerbivore(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double gait) {
+        super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed);
         this.gait = gait;
     }
 
