@@ -18,6 +18,7 @@ public class Seller {
     ArrayList<Coordinate> coordList;
     ArrayList<Bone> boneList;
     ArrayList<Continents> contList;
+    ArrayList<SellerUser> sellerList;
     String shopName = "DK's Dino Shop";
     LoadFile file;
     String[] specificBones = {"amargasaurus","dakosaurus","giganotosaurus","hylaeosaurus","pteranodon","pterodactyl","pterosaur","shastasaurus","spinosaurus","triceratops","tyrannosaurusrex","velociraptor"};
@@ -28,6 +29,7 @@ public class Seller {
         coordList = new ArrayList();
         boneList = new ArrayList();
         contList = new ArrayList();
+        sellerList = new ArrayList();
         file = new LoadFile("text.csv");
         loadContinents();
     }
@@ -77,33 +79,55 @@ public class Seller {
     }
 
     private void setupUser() {
-        String name;
-        int x;
-        int y;
-        Coordinate mapX = null;
-        Coordinate mapY = null;
-        SellerUser user;
+        int choice=0;
+        while(choice != 4) {
+            System.out.println("\nWould you like to:\n1.Add a user\n2.Update a user\n3.Remove a user\n4.Quit to main menu");
+            try{
+                choice = input.nextInt();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+            if (choice == 1){
+                String name = null;
+                String address = null;
+                double x = 0;
+                double y = 0;
 
-        try{
-            name = input.next();
-            x = input.nextInt();
-            y = input.nextInt();
-            //SellerUser user = new SellerUser(;
+                try{
+                    name = input.next();
+                    address = input.next();
+                    x = input.nextDouble();
+                    y = input.nextDouble();
+                    //SellerUser user = new SellerUser(;
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+                SellerUser seller = new SellerUser(name, address, x, y);
+                sellerList.add(seller);
+                break;
+            }
+            if (choice == 2){
+
+            }
+            if (choice == 3){
+
+            }
+
         }
-        catch (Exception e){
-            e.printStackTrace();
-        }
+
 
     }
 
     public void loadContinents(){                                       //Loads and prepares the continents
-        Continents Africa = new Continents("Africa.txt");               contList.add(Africa);
-        Continents Antarctica = new Continents("Antarctica.txt");       contList.add(Antarctica);
-        Continents Asia = new Continents("Asia.txt");                   contList.add(Asia);
-        Continents Australia = new Continents("Australia.txt");         contList.add(Australia);
-        Continents Europe = new Continents("Europe.txt");               contList.add(Europe);
-        Continents NorthAmerica = new Continents("NorthAmerica.txt");   contList.add(NorthAmerica);
-        Continents SouthAmerica = new Continents("SouthAmerica.txt");   contList.add(SouthAmerica);
+        Continents Africa = new Continents("./Africa.txt");               contList.add(Africa);
+        Continents Antarctica = new Continents("./Antarctica.txt");       contList.add(Antarctica);
+        Continents Asia = new Continents("./src/Asia.txt");                   contList.add(Asia);
+        Continents Australia = new Continents("./src/Australia.txt");         contList.add(Australia);
+        Continents Europe = new Continents("/Datastore/src/Europe.txt");               contList.add(Europe);
+        Continents NorthAmerica = new Continents("/Datastore/src/NorthAmerica.txt");   contList.add(NorthAmerica);
+        Continents SouthAmerica = new Continents("/Datastore/src/SouthAmerica.txt");   contList.add(SouthAmerica);
 
     }
 
@@ -133,13 +157,19 @@ public class Seller {
         int choice=0;
         while(choice != 4){
             System.out.println("\nWould you like to:\n1.Create a bone\n2.Update a bone\n3.Remove a bone\n4.Quit to main menu");
-            choice = input.nextInt();
+            try{
+                choice = input.nextInt();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
 
             if(choice == 1){
                 /*Bone newBone = new Bone();
                 newBone.create();
                 boneList.add(newBone);*/
                 create();
+
             }
 
             if(choice == 2){
@@ -227,54 +257,54 @@ public class Seller {
             if (match){
                 switch (dinosaurName){
                     case("amargasaurus"):
-                        Amargasaurus amargasaurus = new Amargasaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"");
+                        Amargasaurus amargasaurus = new Amargasaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"");
                         boneList.add(amargasaurus);
                         break;
                     case("dakosaurus"):
-                        Dakosaurus dakosaurus = new Dakosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,true,"feet");
+                        Dakosaurus dakosaurus = new Dakosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,true,"feet");
                         dakosaurus.getMethodOfPropulsion();
                         dakosaurus.isSaltWater();
                         boneList.add(dakosaurus);
                         break;
                     case("giganotosaurus"):
-                        bone = new Giganotosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0);
+                        bone = new Giganotosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0);
                         boneList.add(bone);
                         break;
                     case("hylaeosaurus"):
-                        bone = new Hylaeosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0,0);
+                        bone = new Hylaeosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0,0);
                         boneList.add(bone);
                         break;
                     case("pteranodon"):
-                        bone = new Pteranodon(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true,0,"yes");
+                        bone = new Pteranodon(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true,0,"yes");
                         boneList.add(bone);
                         break;
                     case("pterodactyl"):
-                        bone = new Pterodactyl(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,true);
+                        bone = new Pterodactyl(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,true);
                         boneList.add(bone);
                         break;
                     case("pterosaur"):
-                        bone = new Pterosaur(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"Red");
+                        bone = new Pterosaur(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"Red");
                         boneList.add(bone);
                         break;
                     case("shastasaurus"):
-                        Shastasaurus shastasaurus = new Shastasaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,true,"feet");
+                        Shastasaurus shastasaurus = new Shastasaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,true,"feet");
                         Shastasaurus.getNumberOfTeeth();
                         boneList.add(shastasaurus);
                         break;
                     case("spinosaurus"):
-                        bone = new Spinosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        bone = new Spinosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("triceratops"):
-                        bone = new Triceratops(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0);
+                        bone = new Triceratops(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("tyrannosaurusrex"):
-                        bone = new TyrannosaurusRex(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        bone = new TyrannosaurusRex(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("velociraptor"):
-                        Velociraptor velociraptor = new Velociraptor(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,"large");
+                        Velociraptor velociraptor = new Velociraptor(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,"large");
                         boneList.add(velociraptor);
                         break;
 

@@ -3,6 +3,7 @@ package Datastore;
 import java.io.File;
 import java.util.Scanner;
 
+
 /**
  * Created by daniel on 3/22/16.
  */
@@ -34,7 +35,7 @@ public class Continents {
 
     public boolean onContinent(Coordinate location){            //Outside of this class have each continent loop through
                                                                 //Every Bone. Bones should have Coordinate Attribute now
-        if(continent[location.rowIndex][location.collIndex]==true){
+        if(continent[location.rowIndex][location.collIndex]){
             //Add price Increase Function
 
             return true;
