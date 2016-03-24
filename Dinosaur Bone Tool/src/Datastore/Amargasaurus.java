@@ -9,7 +9,7 @@ import java.util.Random;
  * 3/20/16.
  */
 public class Amargasaurus extends LandHerbivore {
-    String downloadCode;
+    String downloadCode = randomDownloadCode();
 
     /*public Amargasaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean isAvailable, Coordinate coordinate, double speed, double gait, String downloadCode) {
         super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable, coordinate, speed, gait);

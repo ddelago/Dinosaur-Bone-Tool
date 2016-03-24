@@ -5,15 +5,17 @@ package Seller;
  */
 
 import Datastore.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import com.sun.deploy.util.ArrayUtil;
+import sun.tools.java.ScannerInputReader;
+
+import java.io.*;
 import java.util.*;
 
 
 public class Seller {
 
+    String dinosaurName;
+    String other;
     Scanner input;
     ArrayList<Coordinate> coordList;
     ArrayList<Bone> boneList;
@@ -98,18 +100,37 @@ public class Seller {
 
     }
 
-    public void loadContinents(){                                       //Loads and prepares the continents
-        Continents Africa = new Continents("./src/Datastore/Africa.txt");               contList.add(Africa);
-        Continents Antarctica = new Continents("./src/Datastore/Antarctica.txt");       contList.add(Antarctica);
-        Continents Asia = new Continents("./src/Datastore/Asia.txt");                   contList.add(Asia);
-        Continents Australia = new Continents("./src/Datastore/Australia.txt");         contList.add(Australia);
-        Continents Europe = new Continents("./src/Datastore/Europe.txt");               contList.add(Europe);
-        Continents NorthAmerica = new Continents("./src/Datastore/NorthAmerica.txt");   contList.add(NorthAmerica);
-        Continents SouthAmerica = new Continents("./src/Datastore/SouthAmerica.txt");   contList.add(SouthAmerica);
+    /**
+     * Makes objects of text files, which are added to an array list, and then the function
+     * reads the file from the array list in Continents.java
+     */
+    public void loadContinents(){
+        try {
+            Continents Africa = new Continents("./src/Datastore/Africa.txt");
+            contList.add(Africa);
+            Continents Antarctica = new Continents("./src/Datastore/Antarctica.txt");
+            contList.add(Antarctica);
+            Continents Asia = new Continents("./src/Datastore/Asia.txt");
+            contList.add(Asia);
+            Continents Australia = new Continents("./src/Datastore/Australia.txt");
+            contList.add(Australia);
+            Continents Europe = new Continents("./src/Datastore/Europe.txt");
+            contList.add(Europe);
+            Continents NorthAmerica = new Continents("./src/Datastore/NorthAmerica.txt");
+            contList.add(NorthAmerica);
+            Continents SouthAmerica = new Continents("./src/Datastore/SouthAmerica.txt");
+            contList.add(SouthAmerica);
 
-        Continents.contList=this.contList;
+            Continents.contList = this.contList;
+        }catch (Error e){
+            e.printStackTrace();
+        }
     }
-    public void loadMap(){                                              //Load the map from map.txt
+
+    /**
+     * Loads a text file named map.txt
+     */
+    public void loadMap(){
 
         File mapFile = new File("./src/Datastore/Map.txt");
 
@@ -131,7 +152,14 @@ public class Seller {
         System.out.println("Map Loaded\n");
     }
 
-    public void handleBone(){                                           //Handle a bone according to user input
+    /**
+     * Menu function for choosing create,
+     * update, or removing a single bone.
+     * Each bone currently loaded will be
+     * displayed in a text table with its
+     * ID, name, and price.
+     */
+    public void handleBone(){
         int choice=0;
         while(choice != 4){
             System.out.println("\nWould you like to:\n1.Create a bone\n2.Update a bone\n3.Remove a bone\n4.Quit to main menu");
@@ -203,78 +231,96 @@ public class Seller {
         }
     }
 
+    /**
+     * Function executed from handleBone() that takes a single
+     * line of input (name, price, longitude, latitude,) and
+     * creates a Bone object based off of input.
+     *
+     * TODO: Side effect: If you do not put a comma on the last value, an error will occur.
+     */
+
     private void create() {
         try {
-            Bone bone;
             boolean match = false;
-            String temp = "";
+            float price;
+            double longitude;
+            double lat;
             System.out.print("Enter the values of the dinosaur on a single line: (Name, price, longitude, latitude)\n");
-            String dinosaurName = input.next();
-            float price = input.nextFloat();
-            float longitude = input.nextFloat();
-            float lat = input.nextFloat();
+            Scanner createScanner = new Scanner(System.in);
+            String[] array = new String[4];
+            createScanner.useDelimiter(",");
 
-            // Regex split, and lower case
-            if (dinosaurName.equals(dinosaurName)){
-                dinosaurName = dinosaurName.toLowerCase();
+
+            try {
+                for (int i = 0; i < array.length;i++) {
+                    {
+                        array[i] = createScanner.next();
+                    }
+
+                }
+            }catch (Error e){
+                System.out.print("Wrong format");
             }
+            dinosaurName = array[0].replaceAll("\\s","").toLowerCase();
+            price = Float.parseFloat(array[1]);
+            longitude = Double.parseDouble(array[2]);
+            lat = Double.parseDouble(array[3]);
 
-
-            for (int i = 0; i < specificBones.length; i++) {
-                if (dinosaurName.equals(specificBones[i])){
+            for (String specificBone : specificBones)
+                if (dinosaurName.equals(specificBone)) {
                     match = true;
                 }
-            }
 
             if (match){
                 switch (dinosaurName){
                     case("amargasaurus"):
                         Amargasaurus amargasaurus = new Amargasaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"");
+                        String code = amargasaurus.getDownloadCode();
+                        amargasaurus.setDownloadCode(code);
                         boneList.add(amargasaurus);
                         break;
 
                     case("dakosaurus"):
                         Dakosaurus dakosaurus = new Dakosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,true,"feet");
-                        dakosaurus.getMethodOfPropulsion();
-                        dakosaurus.isSaltWater();
                         boneList.add(dakosaurus);
                         break;
                     case("giganotosaurus"):
-                        bone = new Giganotosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0);
-                        boneList.add(bone);
+                        Giganotosaurus giganotosaurus = new Giganotosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0);
+                        boneList.add(giganotosaurus);
                         break;
                     case("hylaeosaurus"):
-                        bone = new Hylaeosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0,0);
-                        boneList.add(bone);
+                        Hylaeosaurus hylaeosaurus = new Hylaeosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0,0);
+                        boneList.add(hylaeosaurus);
                         break;
                     case("pteranodon"):
-                        bone = new Pteranodon(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true,0,"yes");
-                        boneList.add(bone);
+                        Pteranodon pteranodon = new Pteranodon(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true,0,"yes");
+                        boneList.add(pteranodon);
                         break;
                     case("pterodactyl"):
-                        bone = new Pterodactyl(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true);
-                        boneList.add(bone);
+                        Pterodactyl pterodactyl = new Pterodactyl(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true);
+                        boneList.add(pterodactyl);
                         break;
                     case("pterosaur"):
-                        bone = new Pterosaur(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"Red");
-                        boneList.add(bone);
+                        Pterosaur pterosaur = new Pterosaur(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"Red");
+                        boneList.add(pterosaur);
                         break;
                     case("shastasaurus"):
                         Shastasaurus shastasaurus = new Shastasaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,true,"feet");
-                        Shastasaurus.getNumberOfTeeth();
+                        int teeth = Shastasaurus.getNumberOfTeeth();
+                        Shastasaurus.setNumberOfTeeth(teeth);
                         boneList.add(shastasaurus);
                         break;
                     case("spinosaurus"):
-                        bone = new Spinosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
-                        boneList.add(bone);
+                        Spinosaurus spinosaurus = new Spinosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        boneList.add(spinosaurus);
                         break;
                     case("triceratops"):
-                        bone = new Triceratops(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0);
-                        boneList.add(bone);
+                        Triceratops triceratops = new Triceratops(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0);
+                        boneList.add(triceratops);
                         break;
                     case("tyrannosaurusrex"):
-                        bone = new TyrannosaurusRex(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
-                        boneList.add(bone);
+                        TyrannosaurusRex tyrannosaurusRex = new TyrannosaurusRex(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        boneList.add(tyrannosaurusRex);
                         break;
                     case("velociraptor"):
                         Velociraptor velociraptor = new Velociraptor(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"large");
@@ -295,8 +341,11 @@ public class Seller {
             e.printStackTrace();
         }
     }
-
-    public void displayMap(){                                       //Displays the map containing the Bone for sale
+    /**
+     * Function from seller menu that displays the loaded map.txt file
+     * and the Bone objects that are for sale, if any.
+     */
+    public void displayMap(){
         try {
             for(Bone b : boneList) {
                 System.out.println(b.toString());
@@ -333,6 +382,10 @@ public class Seller {
 
     }
 
+    /**
+     * Function that takes the array list of bones, uses a getter to get the Coordinate object
+     * from the Bone model, gets the position of the Coordinate object, sets the values to 1 or 0
+     */
     public void integrateBonesWithMap(){                            //Finds what coordinate contains a bone
         for(int i=0; i < boneList.size(); i++){
             Bone tempBone = boneList.get(i);
@@ -355,6 +408,9 @@ public class Seller {
         }
     }
 
+    /**
+     * Function that writes the boneList array list to the original file
+     */
     public void saveFile() throws IOException {                 //Saves file to text.csv
         FileWriter outFile = new FileWriter("./src/Datastore/text.csv", false);
         BufferedWriter outStream = new BufferedWriter(outFile);
@@ -373,8 +429,10 @@ public class Seller {
         System.out.println("Data saved.\n");
     }
 
-
-        public static void main(String[] args){                 //Main
+    /**
+     * Static main function, goes to the menu function
+     */
+        public static void main(String[] args){
         Seller Daniel = new Seller();
         Daniel.menu();
     }
