@@ -265,19 +265,19 @@ public class Seller {
                         boneList.add(shastasaurus);
                         break;
                     case("spinosaurus"):
-                        bone = new Spinosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        bone = new Spinosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("triceratops"):
-                        bone = new Triceratops(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0);
+                        bone = new Triceratops(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("tyrannosaurusrex"):
-                        bone = new TyrannosaurusRex(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        bone = new TyrannosaurusRex(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("velociraptor"):
-                        Velociraptor velociraptor = new Velociraptor(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,"large");
+                        Velociraptor velociraptor = new Velociraptor(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,"large");
                         boneList.add(velociraptor);
                         break;
 

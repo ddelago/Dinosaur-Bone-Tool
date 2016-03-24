@@ -23,7 +23,7 @@ public class Buyer {                                        //Buyer Class
         input = new Scanner(System.in);
         coordList = new ArrayList();
         boneList = new ArrayList();
-        file = new LoadFile("text.csv");
+        file = new LoadFile("./src/Datastore/text.csv");
     }
     public void menu(){                                    //Bone Buyer Menu
         int choice;
@@ -66,14 +66,13 @@ public class Buyer {                                        //Buyer Class
 
     public void loadMap(){                                                  //Loads the map from map.txt
 
-        File mapFile = new File("Map.txt");
+        File mapFile = new File("./src/Datastore/Map.txt");
 
         try{
             Scanner fileIn = new Scanner(mapFile);
             while(fileIn.hasNext()){
                 String tempLine = fileIn.nextLine();
                 String coordData[] = tempLine.split(",");
-                //Coordinate newCoord = new Coordinate();
                 Coordinate newCoord = new Coordinate(coordData);
                 //loadMap(coordData);
                 coordList.add(newCoord);
@@ -89,15 +88,11 @@ public class Buyer {                                        //Buyer Class
 
     public void displayMap(){                                               //Displays the map and populates with bones.
         try {
-            /*for(Bones b : boneList) {
-                System.out.println(b.toString());
-            }*/
             integrateBonesWithMap();
             int sum=0;
             for(int i=0; i<20;i++){
                 for(int j=0;j<60;j++){
                     Coordinate tempCoord = coordList.get(sum);
-                    //int[] coordVals = Coordinate.getVals(tempCoord);
                     int[] coordVals = tempCoord.getVals();
                     if(coordVals[3]==0)
                         System.out.print("$");
@@ -143,33 +138,35 @@ public class Buyer {                                        //Buyer Class
         for(Bone b : boneList) {
             if(b.getID() == selection){
                 System.out.println("You have just purchased a " + b.getName() + "!\n");
-                //TODO: Check that this is correct.
                 b.setAvailable(false);
                 break;
             }
         }
     }
 
-    public void integrateBonesWithMap(){                                //Finds what coordinates contain a bone.
-        for(int i=0; i<boneList.size();i++){
+    public void integrateBonesWithMap(){                            //Finds what coordinate contains a bone
+        for(int i=0; i < boneList.size(); i++){
             Bone tempBone = boneList.get(i);
+            Coordinate boneCoord = tempBone.getCoordinate();
+
             for(int k=0;k<coordList.size();k++){
                 Coordinate tempCoord = coordList.get(k);
-                //int[] coordVals = Coordinate.getVals(tempCoord);
                 int[] coordVals = tempCoord.getVals();
-                if(tempBone.getMapX()==coordVals[0] && tempBone.getMapY()==coordVals[1]){
+
+                if(boneCoord.getRowIndex()==coordVals[0] && boneCoord.getCollIndex()==coordVals[1]){
+
                     if(tempBone.isAvailable())
-                        tempCoord.available=1;
+                        tempCoord.available = 1;
                     else if(!tempBone.isAvailable())
-                        tempCoord.available=0;
+                        tempCoord.available = 0;
+
                     coordList.set(k,tempCoord);
                 }
             }
         }
     }
-
     public void saveFile() throws IOException {                       //Saves the bone list to a file
-        FileWriter outFile = new FileWriter("text.csv", false);
+        FileWriter outFile = new FileWriter("./src/Datastore/text.csv", false);
         BufferedWriter outStream = new BufferedWriter(outFile);
         for (int k = 0; k < boneList.size(); k++)
             try {
