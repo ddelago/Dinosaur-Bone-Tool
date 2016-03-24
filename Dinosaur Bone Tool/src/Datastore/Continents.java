@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Continents {
     public boolean [][] continent = new boolean[20][60];
     public String contName;
-    public int priceIncrease;
+    public int priceIncrease=0;
     public Coordinate coordinate;
     public static ArrayList<Continents> contList;
 
@@ -42,8 +42,15 @@ public class Continents {
     }
     public Continents returnContinents(Coordinate location){         //Find out what continents its in and return it
         int i=0;
-        while(contList.get(i).onContinent(location)==false)          //Loop through contList until onContinent returns true
+        while(contList.get(i).onContinent(location)==false){          //Loop through contList until onContinent returns true
             i++;
+            if(i==7)
+                break;
+        }
+        if(i==7){
+            Continents Water = new Continents();
+            return Water;
+        }
         return contList.get(i);
     }
 
