@@ -99,14 +99,15 @@ public class Seller {
     }
 
     public void loadContinents(){                                       //Loads and prepares the continents
-        Continents Africa = new Continents("./src/Datastore/Africa.txt");               Continents.contList.add(Africa);
-        Continents Antarctica = new Continents("./src/Datastore/Antarctica.txt");       Continents.contList.add(Antarctica);
-        Continents Asia = new Continents("./src/Datastore/Asia.txt");                   Continents.contList.add(Asia);
-        Continents Australia = new Continents("./src/Datastore/Australia.txt");         Continents.contList.add(Australia);
-        Continents Europe = new Continents("./src/Datastore/Europe.txt");               Continents.contList.add(Europe);
-        Continents NorthAmerica = new Continents("./src/Datastore/NorthAmerica.txt");   Continents.contList.add(NorthAmerica);
-        Continents SouthAmerica = new Continents("./src/Datastore/SouthAmerica.txt");   Continents.contList.add(SouthAmerica);
+        Continents Africa = new Continents("./src/Datastore/Africa.txt");               contList.add(Africa);
+        Continents Antarctica = new Continents("./src/Datastore/Antarctica.txt");       contList.add(Antarctica);
+        Continents Asia = new Continents("./src/Datastore/Asia.txt");                   contList.add(Asia);
+        Continents Australia = new Continents("./src/Datastore/Australia.txt");         contList.add(Australia);
+        Continents Europe = new Continents("./src/Datastore/Europe.txt");               contList.add(Europe);
+        Continents NorthAmerica = new Continents("./src/Datastore/NorthAmerica.txt");   contList.add(NorthAmerica);
+        Continents SouthAmerica = new Continents("./src/Datastore/SouthAmerica.txt");   contList.add(SouthAmerica);
 
+        Continents.contList=this.contList;
     }
     public void loadMap(){                                              //Load the map from map.txt
 
@@ -285,14 +286,6 @@ public class Seller {
                 }
             }
 
-            /*for(Continents cont : contList){
-                for (Bone b : boneList){
-                    if(cont.onContinent(b.getCoordinate())){
-                        int inc = cont.priceIncrease;
-                        b.setPrice(price + inc);
-                    }
-                }
-            }
             /*if (dinosaurName.equals("Spinosaurus")){
 
             }*/

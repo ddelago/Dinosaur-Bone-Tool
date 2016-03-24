@@ -26,7 +26,7 @@ public abstract class Bone {
     String name;
     Scanner input;
     Coordinate coordinate;
-    Continents continent;
+    Continents continent=new Continents();
 
 
     public Bone(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name) {
@@ -45,8 +45,8 @@ public abstract class Bone {
         this.prospector = prospector;
         this.coordinate = new Coordinate(longitude, latitude);
         this.name = name;
-        this.continent = new Continents(coordinate);
-
+        this.continent = continent.returnContinents(coordinate);
+        this.price=this.price+continent.priceIncrease;
     }
 
     public Bone(String csv[]) {                               //Creating a bone object from a csv file

@@ -33,17 +33,22 @@ public class Continents {
             fileIn.close();
         }
         catch(Exception e){
-            System.out.println("File Error"); //No user input so there should be no error
+            System.out.println("File Error");       //No user input so there should be no error
         }
     }
+    public Continents(){
 
-    public Continents(Coordinate location){
-        onContinent(location);
+
+    }
+    public Continents returnContinents(Coordinate location){         //Find out what continents its in and return it
+        int i=0;
+        while(contList.get(i).onContinent(location)==false)          //Loop through contList until onContinent returns true
+            i++;
+        return contList.get(i);
     }
 
     public boolean onContinent(Coordinate location){            //Outside of this class have each continent loop through
-                                                                //Every Bone. Bones should have Coordinate Attribute now
-        for //Add loop tp check which continents its in and return that cintirnenc 
+                                                                //Every Bone. Bones should have Coordinate Attribute now                                                 //Add loop tp check which continents its in and return that cintirnenc
         if(continent[location.collIndex][location.rowIndex]==true)
             return true;
         return false;
@@ -53,7 +58,6 @@ public class Continents {
 
         if (this.contName.equals("Africa"))
             priceIncrease=3000;
-
         else if (this.contName.equals("Antarctica"))
             priceIncrease=100000;
         else if (this.contName.equals("Asia"))
