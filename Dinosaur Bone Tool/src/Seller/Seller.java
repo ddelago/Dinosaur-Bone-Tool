@@ -229,55 +229,55 @@ public class Seller {
             if (match){
                 switch (dinosaurName){
                     case("amargasaurus"):
-                        Amargasaurus amargasaurus = new Amargasaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"");
+                        Amargasaurus amargasaurus = new Amargasaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"");
                         boneList.add(amargasaurus);
                         break;
 
                     case("dakosaurus"):
-                        Dakosaurus dakosaurus = new Dakosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,true,"feet");
+                        Dakosaurus dakosaurus = new Dakosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,true,"feet");
                         dakosaurus.getMethodOfPropulsion();
                         dakosaurus.isSaltWater();
                         boneList.add(dakosaurus);
                         break;
                     case("giganotosaurus"):
-                        bone = new Giganotosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0);
+                        bone = new Giganotosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0);
                         boneList.add(bone);
                         break;
                     case("hylaeosaurus"):
-                        bone = new Hylaeosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0,0);
+                        bone = new Hylaeosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0,0);
                         boneList.add(bone);
                         break;
                     case("pteranodon"):
-                        bone = new Pteranodon(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true,0,"yes");
+                        bone = new Pteranodon(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true,0,"yes");
                         boneList.add(bone);
                         break;
                     case("pterodactyl"):
-                        bone = new Pterodactyl(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,true);
+                        bone = new Pterodactyl(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,true);
                         boneList.add(bone);
                         break;
                     case("pterosaur"):
-                        bone = new Pterosaur(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"Red");
+                        bone = new Pterosaur(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"Red");
                         boneList.add(bone);
                         break;
                     case("shastasaurus"):
-                        Shastasaurus shastasaurus = new Shastasaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,true,"feet");
+                        Shastasaurus shastasaurus = new Shastasaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,true,"feet");
                         Shastasaurus.getNumberOfTeeth();
                         boneList.add(shastasaurus);
                         break;
                     case("spinosaurus"):
-                        bone = new Spinosaurus(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        bone = new Spinosaurus(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("triceratops"):
-                        bone = new Triceratops(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,0);
+                        bone = new Triceratops(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("tyrannosaurusrex"):
-                        bone = new TyrannosaurusRex(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
+                        bone = new TyrannosaurusRex(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,0);
                         boneList.add(bone);
                         break;
                     case("velociraptor"):
-                        Velociraptor velociraptor = new Velociraptor(true,0,0,0,0,0,0,0,lat,longitude,"new","USA","Kolten",dinosaurName,0,0,"large");
+                        Velociraptor velociraptor = new Velociraptor(true,0,0,price,0,0,0,0,lat,longitude,"new","USA","Daniel",dinosaurName,0,0,"large");
                         boneList.add(velociraptor);
                         break;
 
