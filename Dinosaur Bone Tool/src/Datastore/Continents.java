@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Continents {
     public boolean [][] continent = new boolean[20][60];
     public String contName;
-    public int priceIncrease=0;
+    public int priceIncrease;
     public Coordinate coordinate;
     public static ArrayList<Continents> contList;
 

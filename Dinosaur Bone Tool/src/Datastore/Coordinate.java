@@ -33,6 +33,7 @@ public class Coordinate {                                               //Coordi
         else if (longitude < 0)
             longitude = 30+longitude;
         mapX = (int)Math.round(longitude);
+        System.out.println(mapX);
         return mapX;
     }
 
@@ -46,6 +47,7 @@ public class Coordinate {                                               //Coordi
         else if (latitude <= 0)
             latitude = 9 + Math.abs(latitude);
         mapY = (int)Math.round(latitude);
+        System.out.println(mapY);
         return mapY;
     }
 
