@@ -23,6 +23,7 @@ public class Seller {
     ArrayList<SellerUser> userList;
     String shopName = "DK's Dino Shop";
     LoadFile file;
+    LoadFile sellerUserFile;
     String[] specificBones = {"amargasaurus", "dakosaurus", "giganotosaurus", "hylaeosaurus", "pteranodon", "pterodactyl", "pterosaur", "shastasaurus", "spinosaurus", "triceratops", "tyrannosaurusrex", "velociraptor"};
 
     public Seller() {                                       //Constructor for Seller Class
@@ -33,10 +34,13 @@ public class Seller {
         contList = new ArrayList();
         userList = new ArrayList();
         file = new LoadFile("./src/Datastore/text.csv");
+        sellerUserFile = new LoadFile("./src/Datastore/seller.csv");
 
         loadContinents();
     }
-
+    /**
+     * Parent/Driver menu function for the entire program.
+     */
     public void menu() {                                     //Seller Menu
         int choice;
         Boolean running = true;
@@ -62,6 +66,7 @@ public class Seller {
                 case 4:
                     try {
                         saveFile();
+                        saveUsers();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -70,6 +75,11 @@ public class Seller {
                     boneList = file.loadBones();
                     for (Bone b : boneList) {
                         System.out.println(b);
+                    }
+
+                    userList = sellerUserFile.loadSellers();
+                    for (SellerUser seller : userList){
+                        System.out.println(seller);
                     }
                     break;
                 case 6:
@@ -86,6 +96,9 @@ public class Seller {
         }
     }
 
+    /**
+     * Menu function for creating, updating, or remove a Seller.
+     */
     private void userMenu() {
         int choice = 0;
         while (choice != 4) {
@@ -107,6 +120,11 @@ public class Seller {
         }
     }
 
+    /**
+     * Based on the current ArrayList of users, the user can type in a
+     * matching name that is displayed from the table, and this will
+     * remove the user from the ArrayList.
+     */
     private void removeUser() {
         String name;
         int i;
@@ -131,7 +149,12 @@ public class Seller {
     }
 
 
-
+    /**
+     * Updates list of Sellers, the user types in a name which
+     * has already been previously set by using setupUser().
+     * The user then can rename the user,
+     * give a new longitude, and new latitude.
+     */
     private void updateUser() {
         String name;
         int i;
@@ -146,8 +169,9 @@ public class Seller {
         name = input.next();
         for (i = 0; i < userList.size(); i++) {
             SellerUser temp = userList.get(i);
-            if (!Objects.equals(temp.getName(), name))
-                continue;
+            if (!Objects.equals(temp.getName(), name)){
+                return;
+            }
             else {
                 System.out.print("Please enter a new name for the seller:");
                 String newName = input.next();
@@ -162,6 +186,9 @@ public class Seller {
         }
     }
 
+    /**
+     * Creates an object of SellerUser, and adds it to an ArrayList called userList.
+     */
     private void setupUser() {
         String name;
         double x;
@@ -506,6 +533,24 @@ public class Seller {
             }
         outStream.close();
         System.out.println("Data saved.\n");
+    }
+
+    public void saveUsers() throws IOException{
+        FileWriter outFile = new FileWriter("./src/Datastore/seller.csv", false);
+        BufferedWriter outStream = new BufferedWriter(outFile);
+        for (int k = 0; k < userList.size(); k++)
+            try {
+                String line = userList.get(k).toString();
+
+
+                outStream.write(line);
+
+            } catch (IOException e) {
+                System.out.println("Skipped");
+                e.printStackTrace();
+            }
+        outStream.close();
+        System.out.println("Users saved.\n");
     }
 
     /**

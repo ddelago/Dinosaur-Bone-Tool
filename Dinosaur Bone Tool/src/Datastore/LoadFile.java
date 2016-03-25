@@ -4,6 +4,9 @@ package Datastore;
  *
  */
 
+import Seller.SellerUser;
+import buyer.BuyerUser;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Formatter;
@@ -51,6 +54,36 @@ public class LoadFile {                                            //Loads a bon
         }
 
         return tempBones;
+    }
+
+    public ArrayList<SellerUser> loadSellers() {
+        System.out.println("Loading Sellers....");
+        ArrayList tempSeller = new ArrayList();
+
+        while (fileContents.hasNextLine()) {
+            String line = fileContents.nextLine();
+            String[] parsed = line.split(",");
+            if (parsed.length == 3) {
+                SellerUser sellerUser = new SellerUser(parsed);
+                tempSeller.add(sellerUser);
+            }
+        }
+        return tempSeller;
+    }
+
+    public ArrayList<BuyerUser> loadBuyers() {
+        System.out.println("Loading Buyers....");
+        ArrayList tempBuyers = new ArrayList();
+
+        while (fileContents.hasNextLine()) {
+            String line = fileContents.nextLine();
+            String[] parsed = line.split(",");
+            if (parsed.length == 3) {
+                BuyerUser buyerUser = new BuyerUser(parsed);
+                tempBuyers.add(buyerUser);
+            }
+        }
+        return tempBuyers;
     }
 
 
