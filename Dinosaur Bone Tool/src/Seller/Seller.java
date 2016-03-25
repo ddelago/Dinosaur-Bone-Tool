@@ -529,10 +529,27 @@ public class Seller {
         for(int i=0;i<boneList.size();i++){
             Bone curBone = boneList.get(i);
             Coordinate cur = curBone.getCoordinate();
+
             int curX = (int)(Math.random()*59); //0-59
             int curY = (int)(Math.random()*19); //0-19
-            cur.setRowIndex(curX);
-            cur.setCollIndex(curY);
+            cur.rowIndex = curX;
+            cur.collIndex = curY;
+            for(int j=0;j<coordList.size();j++){
+                if(coordList.get(j).landOrWaterMap==1){
+                    if(cur.rowIndex==coordList.get(j).rowIndex && cur.collIndex==coordList.get(j).collIndex)
+                        break;   //if on land
+                    else if(j==1194){                                              //if bone not on land, get new values and restart loop
+                        curX = (int)(Math.random()*59); //0-59
+                        curY = (int)(Math.random()*19); //0-19
+                        cur.rowIndex = curX;
+                        cur.collIndex = curY;
+                        System.out.print(curX + " ");
+                        System.out.println(curY);
+                        j=0;
+                    }
+                }
+            }
+
         }
         for(int i=0;i<userList.size();i++){
             SellerUser curSeller = userList.get(i);
