@@ -1,19 +1,23 @@
 package Datastore;
 
 /**
- * Amargasaurus.java
+ * Dakosaurus.java
  * Daniel Delago
  * Kolten Sturgill
  * 1001060927
  * 1001089599
  *
- * The Amargasaurus class is the class that defines the Amargasaurus dinosaur bone model
+ * The Dakosaurus class is the class that defines the Dakosaurus dinosaur bone model
  *
  * Data Members:
- * double downloadCode
+ * none
  *
  * Functions:
+ * +public Dakosaurus()
+ *  Takes 15 parameters and assigns to bone object.
  *
+ * +public void printMessage()
+ *  Prints "I survived the Dako!"
  */
 
 public class Giganotosaurus extends LandCarnivore {
