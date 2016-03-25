@@ -619,7 +619,7 @@ public class Seller {
 
     public double distance(){
         double[] coords = userCoord();
-        double long1=coords[0];
+        double long1=coords[0];                         //Variables used in Vincenty Formula
         double lat1=coords[2];
         double long2=coords[1];
         double lat2=coords[3];
@@ -650,6 +650,7 @@ public class Seller {
         double iterLimit = 100;
 
 
+        //*****Using the Vincenty GPS formula based off the following sources:*****//
         //https://en.wikipedia.org/wiki/Vincenty%27s_formulae
         //http://www.kosherjava.com/zmanim/docs/api/src-html/net/sourceforge/zmanim/util/GeoLocationUtils.html
         //https://github.com/janantala/GPS-distance/blob/master/java/Distance.java
@@ -676,7 +677,7 @@ public class Seller {
         deltaSigma =B * sinSigma*(cos2SigmaM + B / 4 * (cosSigma * (-1 + 2 * cos2SigmaM * cos2SigmaM) - B / 6 * cos2SigmaM* (-3 + 4 * sinSigma * sinSigma)* (-3 + 4 * cos2SigmaM * cos2SigmaM)));
         s = b * A * (sigma - deltaSigma);
 
-        return s * 0.00062137;
+        return s * 0.00062137;              //Convert to miles
     }
 
     /**

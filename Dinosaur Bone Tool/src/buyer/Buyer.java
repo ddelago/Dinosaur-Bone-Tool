@@ -37,7 +37,7 @@ public class Buyer {                                        //Buyer Class
             System.out.println("Bone Buyer Menu:");
             System.out.println("1. Load Map\n2. Display Map\n3. Buy a Bone\n4. Save Files\n5. Load Files\n6. Buyer\n7. Scramble\n8. Quit");
             choice = input.nextInt();
-            if (choice < 1 || choice > 7) {
+            if (choice < 1 || choice > 8) {
                 System.out.println("That is not a valid input.\n");
                 continue;
             }
@@ -172,12 +172,16 @@ public class Buyer {                                        //Buyer Class
 
                 if(boneCoord.getRowIndex()==coordVals[0] && boneCoord.getCollIndex()==coordVals[1]){ //If there is a bone at this coordinate
 
-                    if(tempBone.isAvailable())
+                    if(tempBone.isAvailable()){
                         tempCoord.available = 1;
-                    else if(!tempBone.isAvailable())
+                        coordList.set(j,tempCoord);
+                        break;
+                    }
+                    else if(!tempBone.isAvailable()){
                         tempCoord.available = 0;
-
-                    coordList.set(j,tempCoord);
+                        coordList.set(j,tempCoord);
+                        break;
+                    }
                 }
                 else{
                     tempCoord.available = -1;
