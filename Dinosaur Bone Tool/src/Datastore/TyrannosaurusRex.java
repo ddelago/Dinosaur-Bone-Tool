@@ -3,11 +3,29 @@ package Datastore;
 import java.util.Random;
 
 /**
+ * SeaDinosaur.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The SeaDinosaur class is the class that defines the SeaDinosaur dinosaur bone model,
+ * this class extends the abstract Bone class
+ *
+ * Data Members:
+ * boolean saltWater
+ *
+ * Functions:
+ * public SeaDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, boolean saltWater)
+ *
+ * public boolean isSaltWater()
+ *
+ * public void setSaltWater(boolean saltWater)
+ *
+ * public float pricing(Coordinate coordinate, float price)
+ *
  */
+
 public class TyrannosaurusRex extends LandCarnivore {
     int smellingRange = randomInteger(1,5);
 

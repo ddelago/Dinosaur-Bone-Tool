@@ -1,9 +1,4 @@
 package Datastore;
-/**
- * @author KoltenSturgill
- *
- */
-
 import Seller.SellerUser;
 import buyer.BuyerUser;
 
@@ -12,6 +7,28 @@ import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Scanner;
 
+/**
+ * LoadFile.java
+ * Daniel Delago
+ * Kolten Sturgill
+ * 1001060927
+ * 1001089599
+ *
+ * The LoadFile class is a class that dynamically allocates memory to read
+ * from a file and return multiple ArrayLists of objects.
+ *
+ * Data Members:
+ * Scanner fileContents;
+ * Formatter formatter;
+ *
+ * Functions:
+ * public ArrayList<Bone> loadBones()
+ *
+ * public ArrayList<SellerUser> loadSellers()
+ *
+ * public ArrayList<BuyerUser> loadBuyers()
+ *
+ */
 
 public class LoadFile {                                            //Loads a bone file
 

@@ -1,11 +1,31 @@
 package Datastore;
 
+
+
 /**
+ * LandCarnivore.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The LandCarnivore class is the class that defines the LandCarnivore dinosaur bone model,
+ * this class extends LandDinosaur
+ *
+ * Data Members:
+ * double groundSpeed()
+ *
+ * Functions:
+ * +public LandCarnivore(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double groundSpeed)
+ *  Takes 15 parameters and assigns the original values to the bone object.
+ *
+ * public double getGroundSpeed()
+ *
+ * public void setGroundSpeed(double groundSpeed)
+ *
  */
+
+
 public class LandCarnivore extends LandDinosaur {
     double groundSpeed;
 

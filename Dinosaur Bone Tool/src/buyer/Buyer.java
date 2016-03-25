@@ -22,6 +22,8 @@ import java.util.*;
  * ArrayList<BuyerUser> buyerList, LoadFile file, LoadFile buyerFile;
  *
  * Functions:
+ * public static void main(String args[])
+ *
  * menu()
  * No parameters, nothing being returned
  * Infinite while loop that runs the program until the user enters a specific
@@ -52,9 +54,11 @@ import java.util.*;
  *
  * saveFile()
  * No parameters, nothing being returned
+ * Writes to a csv file from the Bones ArrayList using toString()
  *
  * saveBuyer()
  * No parameters, nothing being returned
+ * Writes to a csv file from the buyerList ArrayList, using toString()
  *
  * userMenu()
  * No parameters, nothing being returned
@@ -68,8 +72,17 @@ import java.util.*;
  *
  * updateUser()
  * No parameters, nothing being returned
+ * Displays a table of current users that were created, and asks for
+ * name of the user, then asks for a new name, longitude, and latitude.
  *
  * setupUser()
+ * No parameters, nothing being returned
+ * Asks users for Name,Longitude, and Latitude, and then creates an object of BuyerUser.
+ *
+ * public void updateMap()
+ * No parameters, nothing being returned
+ *
+ * public void scramble()
  * No parameters, nothing being returned
  *
  */

@@ -12,7 +12,7 @@ package Datastore;
  * none
  *
  * Functions:
- * +public Dakosaurus()
+ * +public Dakosaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, boolean saltWater, String methodOfPropulsion)
  *  Takes 15 parameters and assigns to bone object.
  *
  * +public void printMessage()

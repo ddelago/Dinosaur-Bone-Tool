@@ -38,17 +38,21 @@ package Datastore;
  *  Takes a String array parameter with values from text.csv and assigns these values to the bone objects attributes.
  *
  * +public void newLat()
+ * No parameters, nothing being returned
  *  Prompts the user for a new Latitude value and sets the bone object's lat to this value
  *
  * +public void newLong()
+ * No parameters, nothing being returned
  *  Prompts the user for a new longitude value and sets the bone object's long to this value
  *
  * +public void newPrice()
+ * No parameters, nothing being returned
  *  Prompts the user for a new price value and sets the bone object's price to this value
  *
  * +Getters and Setters for all of bones attributes. All auto generated.
  *
  * +public String toString()
+ * No parameters, nothing being returned
  *  returns a string of all of bone's attributes
  */
 

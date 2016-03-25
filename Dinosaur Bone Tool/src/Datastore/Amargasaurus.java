@@ -15,7 +15,7 @@ import java.util.Random;
  * double downloadCode
  *
  * Functions:
- * +public Amargasaurus()
+ * public Amargasaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double gait, String downloadCode)
  *  Takes 15 parameters and assigns to bone object.
  *
  * +public String getDownloadCode()

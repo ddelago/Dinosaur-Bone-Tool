@@ -3,10 +3,27 @@ package Datastore;
 import java.util.Scanner;
 
 /**
+ * LandDinosaur.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The LandDinosaur class is the class that defines the LandDinosaur dinosaur bone model,
+ * this class extends the abstract Bone class
+ *
+ * Data Members:
+ * double speed
+ *
+ * Functions:
+ * public LandDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed)
+ *
+ * public double getSpeed()
+ *
+ * public void setSpeed(double speed)
+ *
+ * public float pricing(Coordinate coordinate, float p)
+ *
  */
 public class LandDinosaur extends Bone {
     double speed;

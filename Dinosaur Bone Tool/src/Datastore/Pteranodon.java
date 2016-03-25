@@ -1,17 +1,40 @@
 
 package Datastore;
 
-
-
-
-
-
-
 /**
+ * Pteranodon.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The Pteranodon class is the class that defines the Pteranodon dinosaur bone model,
+ * this class extends the AirCarnivore class
+ *
+ * Data Members:
+ * boolean availabilityOfSaddle = false;
+ * double costOfSaddle = 1000;
+ * String answer;
+ * Formatter output;
+ * Scanner input;
+ *
+ * Functions:
+ * public Pteranodon(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double wingspan, int numberOfTeeth, boolean availabilityOfSaddle, double costOfSaddle, String answer) {
+ *
+ * public boolean isAvailabilityOfSaddle()
+ *
+ * public void setAvailabilityOfSaddle(boolean availabilityOfSaddle)
+ *
+ * public double getCostOfSaddle()
+ *
+ * public void setCostOfSaddle(double costOfSaddle)
+ *
+ * public String getAnswer()
+ *
+ * public void setAnswer(String answer)
+ *
+ * public float specialOffer(float price)
+ *
  */
 
 import java.util.Formatter;

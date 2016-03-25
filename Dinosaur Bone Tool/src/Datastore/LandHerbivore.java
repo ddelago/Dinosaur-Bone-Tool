@@ -1,10 +1,25 @@
 package Datastore;
 
 /**
+ * LandHerbivore.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The LandHerbivore class is the class that defines the LandHerbivore dinosaur bone model,
+ * this class extends the LandDinosaur class
+ *
+ * Data Members:
+ * double gait
+ *
+ * Functions:
+ * public LandDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed)
+ *
+ * public double getGait()
+ *
+ * public void setGait(double gait)
+ *
  */
 public class LandHerbivore extends LandDinosaur {
     double gait;

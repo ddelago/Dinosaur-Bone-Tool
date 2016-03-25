@@ -4,11 +4,34 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
+ * SeaCarnivore.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The SeaCarnivore class is the class that defines the SeaCarnivore dinosaur bone model,
+ * this class extends the SeaDinosaur class
+ *
+ * Data Members:
+ * String methodOfPropulsion
+ *
+ * Functions:
+ * public SeaCarnivore(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name,boolean saltWater, String methodOfPropulsion)
+ *
+ * private String label(int i)
+ *
+ * public int randomInteger(int min, int max)
+ *
+ * public String getMethodOfPropulsion()
+ *
+ * public void setMethodOfPropulsion(String methodOfPropulsion)
+ *
+ * public float pricing(Coordinate coordinate, float p)
+ *
+ *
  */
+
 public class SeaCarnivore extends SeaDinosaur {
 
     String methodOfPropulsion = label(randomInteger(0, 2));

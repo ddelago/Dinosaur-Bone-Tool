@@ -28,8 +28,40 @@ package Datastore;
  *
  * +public int latToX(double latitude)
  *  Converts a latitude value to a y map index and returns it.
+ * public int getRowIndex()
  *
- * +Getters and Setters for all of Coordinate attributes. All auto generated.
+ * public void setRowIndex(int rowIndex)
+ * Setter, sets row index of Coordinate object
+ *
+ * public int getCollIndex()
+ * Getter, gets Column Index of Coordinate object
+ *
+ * public void setCollIndex(int collIndex)
+ * Setter, sets the Column index of Coordinate object
+ *
+ * public int getLandOrWaterMap()
+ * Getter, gets weather Coordinate object is on land or water, 1 or 0
+ *
+ * public void setLandOrWaterMap(int landOrWaterMap)
+ * Setter, sets int of weather Coordinate is on land or water, with a 1 or 0.
+ *
+ * public int getAvailable()
+ * Getter, gets integer value
+ *
+ * public void setAvailable(int available)
+ * Setter, sets integer value of weather 
+ *
+ * public double getLongitude()
+ * Getter,
+ *
+ * public void setLongitude(double longitude)
+ * Setter,
+ *
+ * public double getLatitude()
+ * Getter,
+ *
+ * public void setLatitude(double latitude)
+ * Setter,
  *
  */
 

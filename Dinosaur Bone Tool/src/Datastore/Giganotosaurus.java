@@ -1,23 +1,24 @@
 package Datastore;
 
 /**
- * Dakosaurus.java
+ * Giganotosaurus.java
  * Daniel Delago
  * Kolten Sturgill
  * 1001060927
  * 1001089599
  *
- * The Dakosaurus class is the class that defines the Dakosaurus dinosaur bone model
+ * The Giganotosaurus class is the class that defines the Giganotosaurus dinosaur bone model,
+ * this class extends LandCarnivore
  *
  * Data Members:
  * none
  *
  * Functions:
- * +public Dakosaurus()
- *  Takes 15 parameters and assigns to bone object.
+ * +public Giganotosaurus()
+ *  Takes 15 parameters and assigns the original values to the bone object.
  *
- * +public void printMessage()
- *  Prints "I survived the Dako!"
+ * +public void poorLittleMe()
+ *  Prints "Bigger than T. Rex, but not as cool.\n"
  */
 
 public class Giganotosaurus extends LandCarnivore {
