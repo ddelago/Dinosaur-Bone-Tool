@@ -7,7 +7,7 @@ package Seller;
 import Datastore.*;
 import com.sun.deploy.util.ArrayUtil;
 //import sun.tools.java.ScannerInputReader;
-
+import buyer.BuyerUser;
 import java.io.*;
 import java.util.*;
 
@@ -46,9 +46,9 @@ public class Seller {
         Boolean running = true;
         while (running) {
             System.out.println("Bone Seller Menu:");
-            System.out.println("1. Load Map\n2. Handle a bone\n3. Display Map\n4. Save Files\n5. Load Files\n6. Create Shop Name\n7. Seller\n8. Scramble\n9. Quit");
+            System.out.println("1. Load Map\n2. Handle a bone\n3. Display Map\n4. Save Files\n5. Load Files\n6. Create Shop Name\n7. Seller\n8. Scramble\n9. Distance\n10. Quit");
             choice = input.nextInt();
-            if (choice < 1 || choice > 9) {
+            if (choice < 1 || choice > 10) {
                 System.out.println("That is not a valid input.\n");
                 continue;
             }
@@ -93,6 +93,10 @@ public class Seller {
                     scramble();
                     break;
                 case 9:
+                    double dist = distance();
+                    System.out.printf("Distance between users is %.2f miles.%n%n", dist);
+                    break;
+                case 10:
                     running = false;
                     break;
             }
@@ -543,13 +547,10 @@ public class Seller {
                         curY = (int)(Math.random()*19); //0-19
                         cur.rowIndex = curX;
                         cur.collIndex = curY;
-                        System.out.print(curX + " ");
-                        System.out.println(curY);
                         j=0;
                     }
                 }
             }
-
         }
         for(int i=0;i<userList.size();i++){
             SellerUser curSeller = userList.get(i);
@@ -559,6 +560,134 @@ public class Seller {
             cur.setLongitude(curX);
             cur.setLatitude(curY);
         }
+    }
+
+    public double[] userCoord(){
+        String name1;
+        SellerUser seller;
+        double long1, long2, lat1, lat2;
+        double[] coords = new double[4];
+        System.out.println("--------------------------------------------------------");
+        System.out.println("|    Name       |    Longitude    |     Latitude       |");
+        System.out.println("--------------------------------------------------------");
+        for (SellerUser user : userList) {
+            System.out.printf("|%-15s|%-17.2f|%-20.2f|%n", user.getName(), user.getCoordinate().getLongitude(), user.getCoordinate().getLatitude());
+        }
+        System.out.println("--------------------------------------------------------");
+        System.out.print("Select a seller by entering their name: ");
+        name1 = input.next();
+        for (int i = 0; i < userList.size(); i++) {
+            SellerUser temp = userList.get(i);
+            if (!Objects.equals(temp.getName(), name1))
+                continue;
+            else {
+                seller=temp;
+                long1=seller.getCoordinate().getLongitude();
+                lat1=seller.getCoordinate().getLatitude();
+                coords[0]=long1;
+                coords[2]=lat1;
+            }
+        }
+
+        LoadFile buyerFile = new LoadFile("./src/Datastore/buyers.csv");
+        ArrayList<BuyerUser> buyerList = buyerFile.loadBuyers();
+        String name2;
+        BuyerUser buyer;
+        System.out.println("--------------------------------------------------------");
+        System.out.println("|    Name       |    Longitude    |     Latitude       |");
+        System.out.println("--------------------------------------------------------");
+        for (BuyerUser user : buyerList) {
+            System.out.printf("|%-15s|%-17.2f|%-20.2f|%n", user.getName(), user.getCoordinate().getLongitude(), user.getCoordinate().getLatitude());
+        }
+        System.out.println("--------------------------------------------------------");
+        System.out.print("Select a buyer by entering their name: ");
+        name2 = input.next();
+        for (int i = 0; i < buyerList.size(); i++) {
+            BuyerUser temp = buyerList.get(i);
+            if (!Objects.equals(temp.getName(), name2))
+                continue;
+            else {
+                buyer=temp;
+                long2=buyer.getCoordinate().getLongitude();
+                lat2=buyer.getCoordinate().getLatitude();
+                coords[1]=long2;
+                coords[3]=lat2;
+            }
+        }
+        return coords;
+    }
+
+    public double distance(){
+        double[] coords = userCoord();
+        double long1=coords[0];
+        double lat1=coords[2];
+        double long2=coords[1];
+        double lat2=coords[3];
+        double a = 6378137;
+        double f = 1/298.257;
+        double b = (1-f)*a;
+        double L = Math.toRadians(long2 - long1);
+        double U1 = Math.atan((1 - f) * Math.tan(Math.toRadians(lat1)));
+        double U2 = Math.atan((1 - f) * Math.tan(Math.toRadians(lat2)));
+        double sinU1 = Math.sin(U1), cosU1 = Math.cos(U1);
+        double sinU2 = Math.sin(U2), cosU2 = Math.cos(U2);
+        double cosSqAlpha;
+        double sinSigma;
+        double cos2SigmaM;
+        double cosSigma;
+        double sigma;
+        double lambda = L, lambdaP, iterLimit = 100;
+
+        do
+        {
+            double sinLambda = Math.sin(lambda), cosLambda = Math.cos(lambda);
+            sinSigma = Math.sqrt(	(cosU2 * sinLambda)
+                    * (cosU2 * sinLambda)
+                    + (cosU1 * sinU2 - sinU1 * cosU2 * cosLambda)
+                    * (cosU1 * sinU2 - sinU1 * cosU2 * cosLambda)
+            );
+            if (sinSigma == 0)
+            {
+                return 0;
+            }
+
+            cosSigma = sinU1 * sinU2 + cosU1 * cosU2 * cosLambda;
+            sigma = Math.atan2(sinSigma, cosSigma);
+            double sinAlpha = cosU1 * cosU2 * sinLambda / sinSigma;
+            cosSqAlpha = 1 - sinAlpha * sinAlpha;
+            cos2SigmaM = cosSigma - 2 * sinU1 * sinU2 / cosSqAlpha;
+
+            double C = f / 16 * cosSqAlpha * (4 + f * (4 - 3 * cosSqAlpha));
+            lambdaP = lambda;
+            lambda = 	L + (1 - C) * f * sinAlpha
+                    * 	(sigma + C * sinSigma
+                    * 	(cos2SigmaM + C * cosSigma
+                    * 	(-1 + 2 * cos2SigmaM * cos2SigmaM)
+            )
+            );
+
+        } while (Math.abs(lambda - lambdaP) > 1e-12 && --iterLimit > 0);
+
+        if (iterLimit == 0)
+        {
+            return 0;
+        }
+
+        double uSq = cosSqAlpha * (a * a - b * b) / (b * b);
+        double A = 1 + uSq / 16384
+                * (4096 + uSq * (-768 + uSq * (320 - 175 * uSq)));
+        double B = uSq / 1024 * (256 + uSq * (-128 + uSq * (74 - 47 * uSq)));
+        double deltaSigma =
+                B * sinSigma
+                        * (cos2SigmaM + B / 4
+                        * (cosSigma
+                        * (-1 + 2 * cos2SigmaM * cos2SigmaM) - B / 6 * cos2SigmaM
+                        * (-3 + 4 * sinSigma * sinSigma)
+                        * (-3 + 4 * cos2SigmaM * cos2SigmaM)));
+
+        double s = b * A * (sigma - deltaSigma);
+
+        return s * 0.00062137;
     }
 
     /**

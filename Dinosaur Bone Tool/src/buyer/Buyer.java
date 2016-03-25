@@ -294,7 +294,7 @@ public class Buyer {                                        //Buyer Class
             System.out.printf("|%-15s|%-17.2f|%-20.2f|%n", user.getName(), user.getCoordinate().getLongitude(), user.getCoordinate().getLatitude());
         }
         System.out.println("--------------------------------------------------------");
-        System.out.print("Enter the sellers name to remove them: ");
+        System.out.print("Enter the buyers name to remove them: ");
         name = input.next();
         for (i = 0; i < buyerList.size(); i++) {
             BuyerUser temp = buyerList.get(i);
