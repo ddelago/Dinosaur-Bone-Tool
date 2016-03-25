@@ -1,10 +1,58 @@
 package Datastore;
-/**
-    * @author KoltenSturgill
-    *
-*/
-import java.util.Scanner;
 
+/**
+ * Bone.java
+ * Daniel Delago
+ * Kolten Sturgill
+ * 1001060927
+ * 1001089599
+ *
+ * The Bone class is an abstract class that defines the dinosaur bone model,
+ * which Land, Sea, and Air Dinosaur inherit from. This is the parent class
+ * for the dinosaur bones.
+ *
+ * Data Members:
+ * boolean isAvailable = true;
+ * int age;
+ * int mapX;
+ * int mapY;
+ * int id;
+ * float price;
+ * float length;
+ * float width;
+ * float height;
+ * float weight;
+ * double latitude;
+ * double longitude;
+ * String condition;
+ * String origin;
+ * String prospector;
+ * String name;
+ * Coordinate coordinate;
+ * Continents continent=new Continents();
+ *
+ * Functions:
+ * +public Bone(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name)
+ *  Assigns the parameter values to the bone objects attributes.
+ * +public Bone(String csv[])
+ *  Takes a String array parameter with values from text.csv and assigns these values to the bone objects attributes.
+ *
+ * +public void newLat()
+ *  Prompts the user for a new Latitude value and sets the bone object's lat to this value
+ *
+ * +public void newLong()
+ *  Prompts the user for a new longitude value and sets the bone object's long to this value
+ *
+ * +public void newPrice()
+ *  Prompts the user for a new price value and sets the bone object's price to this value
+ *
+ * +Getters and Setters for all of bones attributes. All auto generated.
+ *
+ * +public String toString()
+ *  returns a string of all of bone's attributes
+ */
+
+import java.util.Scanner;
 
 public abstract class Bone {
 

@@ -5,8 +5,6 @@ package Seller;
  */
 
 import Datastore.*;
-import com.sun.deploy.util.ArrayUtil;
-//import sun.tools.java.ScannerInputReader;
 import buyer.BuyerUser;
 import java.io.*;
 import java.util.*;

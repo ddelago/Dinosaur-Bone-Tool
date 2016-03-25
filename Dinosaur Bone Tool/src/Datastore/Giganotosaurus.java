@@ -1,11 +1,21 @@
 package Datastore;
 
 /**
+ * Amargasaurus.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The Amargasaurus class is the class that defines the Amargasaurus dinosaur bone model
+ *
+ * Data Members:
+ * double downloadCode
+ *
+ * Functions:
+ *
  */
+
 public class Giganotosaurus extends LandCarnivore {
 
     /*public Giganotosaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector,boolean isAvailable, Coordinate coordinate, double speed, double groundSpeed) {

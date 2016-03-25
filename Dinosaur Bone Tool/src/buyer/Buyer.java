@@ -1,7 +1,4 @@
-package buyer; /**
- * Daniel Delago    1/28/2016
- * Seller Program
- */
+package buyer;
 import Datastore.*;
 
 import java.io.BufferedWriter;
@@ -9,6 +6,73 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+/**
+ * Buyer.java
+ * Daniel Delago    1/28/2016
+ * Kolten Sturgill
+ *
+ * 1001060927
+ * 1001089599
+ *
+ * The Buyer class is the class that houses the buyer tool,
+ * which is a menu driven class that responds to the users input.
+ *
+ * Data Members:
+ * Scanner input, ArrayList<Coordinate> coordList, ArrayList<Bone> boneList,
+ * ArrayList<BuyerUser> buyerList, LoadFile file, LoadFile buyerFile;
+ *
+ * Functions:
+ * menu()
+ * No parameters, nothing being returned
+ * Infinite while loop that runs the program until the user enters a specific
+ * value to exit the program. This is the driving function of the entire program.
+ *
+ * loadMap():
+ * No parameters, nothing being returned
+ * Reads in the Map.txt file using a Scanner object, which is split by commas
+ * and populates an array list with the values.
+ *
+ * displayMap()
+ * No parameters, nothing being returned
+ * Displays the map from the cordList, and displays a symbol based
+ * of the values in the array list.
+ *
+ * buyBone()
+ * No parameters, nothing being returned
+ * Displays a table of all the immediately available bones
+ * from the boneList array list. The user then can enter an integer
+ * that will get the ID of the bone, and then confirms if they want to
+ * purchase the bone.
+ *
+ * integrateBonesWithMap()
+ * No parameters, nothing being returned
+ * This functions generates coordinates based off the longitude
+ * and latitude for each bone object, and then uses the coordList
+ * array list
+ *
+ * saveFile()
+ * No parameters, nothing being returned
+ *
+ * saveBuyer()
+ * No parameters, nothing being returned
+ *
+ * userMenu()
+ * No parameters, nothing being returned
+ * Menu function for creating, updating, or remove a Seller.
+ *
+ * removeUser()
+ * No parameters, nothing being returned
+ * Based on the current ArrayList of users, the user can type in a
+ * matching name that is displayed from the table, and this will
+ * remove the user from the ArrayList.
+ *
+ * updateUser()
+ * No parameters, nothing being returned
+ *
+ * setupUser()
+ * No parameters, nothing being returned
+ *
+ */
 
 
 public class Buyer {                                        //Buyer Class

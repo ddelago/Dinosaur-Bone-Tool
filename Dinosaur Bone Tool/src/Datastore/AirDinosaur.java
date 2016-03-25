@@ -3,18 +3,37 @@ package Datastore;
 import java.util.Scanner;
 
 /**
+ * AirDinosaur.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The AirDinosaur class is the class that defines the AirDinosaur model
+ * which inherits from the Bone class.
+ *
+ * Data Members:
+ * double wingspan
+ *
+ * Functions:
+ * +public AirDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double wingspan, int numberOfTeeth)
+ *  Takes 15 parameters, returns nothing
+ *  Creates an instance of AirDinosaur, sets the data member wingspan
+ *
+ * +public double getWingspan()
+ *  No parameters, returns data member wingspan to an instance of AirDinosaur of type double.
+ *  This is a getter, auto generated code.
+ *
+ * +public void setWingspan(double wingspan)
+ *  Takes a double and set's AirDinosaur wingspan data member to this double.
+ *
+ * +public float pricing(Coordinate coordinate, float p)
+ *  Displays the suggested price and prompts the user if they want to change it.
+ *  returns the new price.
  */
+
 public class AirDinosaur extends Bone {
     double wingspan;
-
-    /*public AirDinosaur(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean isAvailable, Coordinate coordinate, double wingspan) {
-        super(name,age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable,coordinate);
-        this.wingspan = wingspan;
-    }*/
 
     public AirDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double wingspan) {
         super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name);

@@ -3,19 +3,34 @@ package Datastore;
 import java.util.Random;
 
 /**
+ * Amargasaurus.java
+ * Daniel Delago
  * Kolten Sturgill
+ * 1001060927
  * 1001089599
- * CSE 1325-002
- * 3/20/16.
+ *
+ * The Amargasaurus class is the class that defines the Amargasaurus dinosaur bone model
+ *
+ * Data Members:
+ * double downloadCode
+ *
+ * Functions:
+ * +public Amargasaurus()
+ *  Takes 15 parameters and assigns to bone object.
+ *
+ * +public String getDownloadCode()
+ *  Returns data member downloadCode
+ *
+ * +public void setDownloadCode(String downloadCode)
+ *  Takes a string to set's Amargasaurus downloadCode data member to this string.
+ *
+ * +private String randomDownloadCode()
+ *  Generates a random String of 16 characters and returns it using the StringBuilder library by WhiteFang34, modified for this program.
+ *  http://stackoverflow.com/questions/5683327/how-to-generate-a-random-string-of-20-characters
  */
+
 public class Amargasaurus extends LandHerbivore {
     String downloadCode = randomDownloadCode();
-
-    /*public Amargasaurus(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean isAvailable, Coordinate coordinate, double speed, double gait, String downloadCode) {
-        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, isAvailable, coordinate, speed, gait);
-        this.downloadCode = randomDownloadCode();
-        System.out.print("Your free download code: " + getDownloadCode().toUpperCase());
-    }*/
 
     public Amargasaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double gait, String downloadCode) {
         super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, speed, gait);
@@ -30,11 +45,6 @@ public class Amargasaurus extends LandHerbivore {
         this.downloadCode = downloadCode;
     }
 
-    /**
-     *  Generates a random String of 16 characters
-     *  using the StringBuilder library by WhiteFang34, modified for this program.
-     *  http://stackoverflow.com/questions/5683327/how-to-generate-a-random-string-of-20-characters
-     * */
     private String randomDownloadCode(){
         char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         StringBuilder sb = new StringBuilder();

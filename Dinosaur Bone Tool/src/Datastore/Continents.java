@@ -5,8 +5,36 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by daniel on 3/22/16.
+ * Continents.java
+ * Daniel Delago
+ * Kolten Sturgill
+ * 1001060927
+ * 1001089599
+ *
+ * The Continents class is the class that defines the continent attribute for every bone,user, and map.
+ *
+ * Data Members:
+ * boolean [][]continent;
+ * String contName;
+ * int priceIncrease;
+ * Coordinate coordinate;
+ * ArrayList<Continents> contList;
+ *
+ * Functions:
+ * +public Continents(String contName)
+ *  Takes a String and assigns the continent object's contName attribute to this string.
+ *  Takes the continent file and assigns boolean values into continent depending on the values in the file.
+ *
+ * +public Continents returnContinents(Coordinate location)
+ *  Takes in a Coordinate object and returns what continent this object is on
+ *
+ * +public boolean onContinent(Coordinate location)
+ *  Takes a Coordinate and returns true of false if it is located on the current continent.
+ *
+ * +public float price()
+ *  Assign a specific price to the attribute priceIncrease depending on what continent the object is.
  */
+
 public class Continents {
     public boolean [][] continent = new boolean[20][60];
     public String contName;
@@ -36,10 +64,10 @@ public class Continents {
             System.out.println("File Error");       //No user input so there should be no error
         }
     }
+
     public Continents(){
-
-
     }
+
     public Continents returnContinents(Coordinate location){         //Find out what continents its in and return it
         int i=0;
         while(contList.get(i).onContinent(location)==false){          //Loop through contList until onContinent returns true
