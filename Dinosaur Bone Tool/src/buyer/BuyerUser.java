@@ -1,4 +1,4 @@
-package Seller;
+package buyer;
 
 import Datastore.Coordinate;
 
@@ -6,22 +6,22 @@ import Datastore.Coordinate;
  * Kolten Sturgill
  * 1001089599
  * CSE 1325-002
- * 3/20/16.
+ * 3/24/16.
  */
-public class SellerUser {
+public class BuyerUser {
     double longitude;
     double latitude;
     String name;
     Coordinate coordinate;
 
-    public SellerUser(double mapX, double mapY, String name) {
+    public BuyerUser(double mapX, double mapY, String name) {
         this.longitude = mapX;
         this.latitude = mapY;
         this.name = name;
         this.coordinate = new Coordinate(mapX,mapY);
     }
 
-    public SellerUser(String[] csv){
+    public BuyerUser(String[] csv){
         this.latitude = Double.parseDouble(csv[0]);
         this.longitude = Double.parseDouble(csv[1]);
         this.name = csv[2];
