@@ -626,66 +626,55 @@ public class Seller {
         double a = 6378137;
         double f = 1/298.257;
         double b = (1-f)*a;
-        double L = Math.toRadians(long2 - long1);
         double U1 = Math.atan((1 - f) * Math.tan(Math.toRadians(lat1)));
         double U2 = Math.atan((1 - f) * Math.tan(Math.toRadians(lat2)));
-        double sinU1 = Math.sin(U1), cosU1 = Math.cos(U1);
-        double sinU2 = Math.sin(U2), cosU2 = Math.cos(U2);
+        double L = Math.toRadians(long2 - long1);
+        double sinU1 = Math.sin(U1);
+        double cosU1 = Math.cos(U1);
+        double sinU2 = Math.sin(U2);
+        double cosU2 = Math.cos(U2);
         double cosSqAlpha;
         double sinSigma;
+        double sinAlpha;
         double cos2SigmaM;
         double cosSigma;
         double sigma;
-        double lambda = L, lambdaP, iterLimit = 100;
+        double lambda = L;
+        double lambdaP;
+        double C;
+        double uSq;
+        double A;
+        double B;
+        double deltaSigma;
+        double s;
+        double iterLimit = 100;
 
+
+        //https://en.wikipedia.org/wiki/Vincenty%27s_formulae
+        //http://www.kosherjava.com/zmanim/docs/api/src-html/net/sourceforge/zmanim/util/GeoLocationUtils.html
+        //https://github.com/janantala/GPS-distance/blob/master/java/Distance.java
         do
         {
-            double sinLambda = Math.sin(lambda), cosLambda = Math.cos(lambda);
-            sinSigma = Math.sqrt(	(cosU2 * sinLambda)
-                    * (cosU2 * sinLambda)
-                    + (cosU1 * sinU2 - sinU1 * cosU2 * cosLambda)
-                    * (cosU1 * sinU2 - sinU1 * cosU2 * cosLambda)
-            );
-            if (sinSigma == 0)
-            {
-                return 0;
-            }
-
+            double sinLambda = Math.sin(lambda);
+            double cosLambda = Math.cos(lambda);
+            sinSigma = Math.sqrt((cosU2 * sinLambda)*(cosU2 * sinLambda)+(cosU1 * sinU2 - sinU1 * cosU2 * cosLambda)*(cosU1 * sinU2 - sinU1 * cosU2 * cosLambda));
             cosSigma = sinU1 * sinU2 + cosU1 * cosU2 * cosLambda;
             sigma = Math.atan2(sinSigma, cosSigma);
-            double sinAlpha = cosU1 * cosU2 * sinLambda / sinSigma;
+            sinAlpha = cosU1 * cosU2 * sinLambda / sinSigma;
             cosSqAlpha = 1 - sinAlpha * sinAlpha;
             cos2SigmaM = cosSigma - 2 * sinU1 * sinU2 / cosSqAlpha;
 
-            double C = f / 16 * cosSqAlpha * (4 + f * (4 - 3 * cosSqAlpha));
+            C = f / 16 * cosSqAlpha * (4 + f * (4 - 3 * cosSqAlpha));
             lambdaP = lambda;
-            lambda = 	L + (1 - C) * f * sinAlpha
-                    * 	(sigma + C * sinSigma
-                    * 	(cos2SigmaM + C * cosSigma
-                    * 	(-1 + 2 * cos2SigmaM * cos2SigmaM)
-            )
-            );
+            lambda = L + (1 - C) * f * sinAlpha*(sigma + C * sinSigma*(cos2SigmaM + C * cosSigma*(-1 + 2 * cos2SigmaM * cos2SigmaM)));
 
-        } while (Math.abs(lambda - lambdaP) > 1e-12 && --iterLimit > 0);
+        } while (Math.abs(lambda - lambdaP) > (Math.pow(10,-12)) && --iterLimit > 0);
 
-        if (iterLimit == 0)
-        {
-            return 0;
-        }
-
-        double uSq = cosSqAlpha * (a * a - b * b) / (b * b);
-        double A = 1 + uSq / 16384
-                * (4096 + uSq * (-768 + uSq * (320 - 175 * uSq)));
-        double B = uSq / 1024 * (256 + uSq * (-128 + uSq * (74 - 47 * uSq)));
-        double deltaSigma =
-                B * sinSigma
-                        * (cos2SigmaM + B / 4
-                        * (cosSigma
-                        * (-1 + 2 * cos2SigmaM * cos2SigmaM) - B / 6 * cos2SigmaM
-                        * (-3 + 4 * sinSigma * sinSigma)
-                        * (-3 + 4 * cos2SigmaM * cos2SigmaM)));
-
-        double s = b * A * (sigma - deltaSigma);
+        uSq = cosSqAlpha * (a * a - b * b) / (b * b);
+        A = 1 + uSq / 16384*(4096 + uSq * (-768 + uSq * (320 - 175 * uSq)));
+        B = uSq / 1024 * (256 + uSq * (-128 + uSq * (74 - 47 * uSq)));
+        deltaSigma =B * sinSigma*(cos2SigmaM + B / 4 * (cosSigma * (-1 + 2 * cos2SigmaM * cos2SigmaM) - B / 6 * cos2SigmaM* (-3 + 4 * sinSigma * sinSigma)* (-3 + 4 * cos2SigmaM * cos2SigmaM)));
+        s = b * A * (sigma - deltaSigma);
 
         return s * 0.00062137;
     }
