@@ -86,7 +86,7 @@ import java.util.*;
  * coordinates are at this location, break out of the loop and those new coordinates are valid.
  * Else if the new coordinates are not on land, create two new random coordinates and
  * test those coordinates.
- * 
+ *
  */
 
 

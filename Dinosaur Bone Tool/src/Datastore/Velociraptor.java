@@ -3,26 +3,33 @@ package Datastore;
 import java.util.Random;
 
 /**
- * SeaDinosaur.java
+ * Velociraptor.java
  * Daniel Delago
  * Kolten Sturgill
  * 1001060927
  * 1001089599
  *
- * The SeaDinosaur class is the class that defines the SeaDinosaur dinosaur bone model,
- * this class extends the abstract Bone class
+ * The Velociraptor class is the class that defines the Velociraptor dinosaur bone model,
+ * this class extends the LandCarnivore class
  *
  * Data Members:
- * boolean saltWater
+ * String size
  *
  * Functions:
- * public SeaDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, boolean saltWater)
+ * public Velociraptor(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, boolean saltWater)
+ * Takes 15 parameters and assigns the original values to the bone object. Also displays the size of the Velociraptor.
  *
- * public boolean isSaltWater()
+ * public String getSize()
+ * Returns the size of the Velociraptor object
  *
- * public void setSaltWater(boolean saltWater)
+ * public void setSize()
+ * Takes a String and sets the size to it.
  *
- * public float pricing(Coordinate coordinate, float price)
+ * public String printSize(int i)
+ * Depending on i's value size is set to "small", "medium", or "large"
+ *
+ * public int randomInteger(int min, int max)
+ * Returns a random int between min and max
  *
  */
 
