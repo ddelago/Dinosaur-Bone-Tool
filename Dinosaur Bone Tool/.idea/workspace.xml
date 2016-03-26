@@ -63,53 +63,52 @@
     <favorites_list name="seller" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48594743">
+    <splitter split-orientation="horizontal" split-proportion="0.9">
       <split-first>
-        <leaf>
-          <file leaf-file-name="Coordinate.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Datastore/Coordinate.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="64" column="2" selection-start="2035" selection-end="2035" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="2220">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Seller.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="107" column="0" selection-start="3777" selection-end="3777" vertical-scroll-proportion="0.5509182" vertical-offset="1230" max-vertical-offset="12300">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SellerUser.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Seller/SellerUser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="2" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="Buyer.java" pinned="false" current="true" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/buyer/Buyer.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="88" column="3" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.85141903" vertical-offset="720" max-vertical-offset="6840">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Seller.java" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="53" column="9" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="12300">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="Seller.java" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="101" column="26" selection-start="3281" selection-end="3643" vertical-scroll-proportion="0.4458042" vertical-offset="1215" max-vertical-offset="12300">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Buyer.java" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Buyer.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/buyer/Buyer.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="382" column="25" selection-start="13685" selection-end="13685" vertical-scroll-proportion="0.0" vertical-offset="5221" max-vertical-offset="6810">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Seller.java" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="320" column="33" selection-start="11870" selection-end="11870" vertical-scroll-proportion="0.6377295" vertical-offset="4373" max-vertical-offset="12300">
+                <state line="80" column="2" selection-start="2612" selection-end="2612" vertical-scroll-proportion="0.04841402" vertical-offset="1081" max-vertical-offset="6840">
                   <folding />
                 </state>
               </provider>
@@ -137,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/Datastore/Dakosaurus.java" />
         <option value="$PROJECT_DIR$/src/Datastore/Giganotosaurus.java" />
         <option value="$PROJECT_DIR$/src/Datastore/Hylaeosaurus.java" />
-        <option value="$PROJECT_DIR$/src/buyer/Buyer.java" />
         <option value="$PROJECT_DIR$/src/Seller/Seller.java" />
+        <option value="$PROJECT_DIR$/src/buyer/Buyer.java" />
       </list>
     </option>
   </component>
@@ -488,7 +487,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.018181818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04505929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24556214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -780,20 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Seller/SellerUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="2" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/Coordinate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="2" selection-start="2035" selection-end="2035" vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="2220">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/Giganotosaurus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="2" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="675">
@@ -808,16 +793,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/buyer/Buyer.java">
+    <entry file="file://$PROJECT_DIR$/src/Datastore/Coordinate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="382" column="25" selection-start="13685" selection-end="13685" vertical-scroll-proportion="0.0" vertical-offset="5221" max-vertical-offset="6810">
+        <state line="64" column="2" selection-start="2035" selection-end="2035" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="2220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Seller/SellerUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="32" selection-start="599" selection-end="599" vertical-scroll-proportion="-1.3284314" vertical-offset="1128" max-vertical-offset="1740">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="3777" selection-end="3777" vertical-scroll-proportion="0.5509182" vertical-offset="1230" max-vertical-offset="12300">
+        <state line="53" column="9" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="12300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/buyer/Buyer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="3" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.85141903" vertical-offset="720" max-vertical-offset="6840">
           <folding />
         </state>
       </provider>

@@ -51,7 +51,7 @@ import java.util.*;
  * that will get the ID of the bone, and then confirms if they want to
  * purchase the bone.
  *
- * integrateBonesWithMap()
+ * updateMap()
  * No parameters, nothing being returned
  * This functions generates coordinates based off the longitude
  * and latitude for each bone object, and then uses the coordList

@@ -46,7 +46,7 @@ import java.util.*;
  * that will get the ID of the bone, and then confirms if they want to
  * purchase the bone.
  *
- * integrateBonesWithMap()
+ * updateMap()
  * No parameters, nothing being returned
  * This functions generates coordinates based off the longitude
  * and latitude for each bone object, and then uses the coordList
@@ -79,12 +79,14 @@ import java.util.*;
  * No parameters, nothing being returned
  * Asks users for Name,Longitude, and Latitude, and then creates an object of BuyerUser.
  *
- * public void updateMap()
- * No parameters, nothing being returned
- *
  * public void scramble()
  * No parameters, nothing being returned
- *
+ * For every bone in boneList, two random int coordinates are created.
+ * Then for every coordinate on the map, if it is a land coordinate and if the random
+ * coordinates are at this location, break out of the loop and those new coordinates are valid.
+ * Else if the new coordinates are not on land, create two new random coordinates and
+ * test those coordinates.
+ * 
  */
 
 
