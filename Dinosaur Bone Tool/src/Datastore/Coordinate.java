@@ -1,6 +1,6 @@
 package Datastore;
 /**
- * Continents.java
+ * Coordinate.java
  * Daniel Delago
  * Kolten Sturgill
  * 1001060927
@@ -9,8 +9,8 @@ package Datastore;
  * The Coordinate class is the class that defines the Coordinate attribute for every bone, user, and map.
  *
  * Data Members:
- * int rowindex, collIndex, landOrWaterMap, available;
- * double longitude, latitude;
+ * int rowindex, collIndex, landOrWaterMap, available
+ * double longitude, latitude
  *
  * Functions:
  * +public Coordinate(String newCoordData [])
@@ -52,16 +52,19 @@ package Datastore;
  * Setter, sets integer value of weather 
  *
  * public double getLongitude()
- * Getter,
+ * Getter, gets Longitude value of Coordinate object
  *
  * public void setLongitude(double longitude)
- * Setter,
+ * Setter, sets Longitude value of Coordinate, takes a single parameter
+ * of type double
  *
  * public double getLatitude()
- * Getter,
+ * Getter, gets the value of the latitude
+ * of the Coordinate object.
  *
  * public void setLatitude(double latitude)
- * Setter,
+ * Setter, sets the latitude value of the Object Coordinate,
+ * takes a single parameter of type double.
  *
  */
 

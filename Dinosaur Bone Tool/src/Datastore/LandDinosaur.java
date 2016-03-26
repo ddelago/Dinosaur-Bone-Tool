@@ -17,13 +17,14 @@ import java.util.Scanner;
  *
  * Functions:
  * public LandDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed)
+ * Constructor, takes 15 parameters and sets the beginning values of LandDinosaur
  *
  * public double getSpeed()
- *
+ * Getter, gets the instance of LandDinosaur's speed
  * public void setSpeed(double speed)
- *
+ * Setter, sets the speed attribute of LandDinosaur, takes a single parameter of type double.
  * public float pricing(Coordinate coordinate, float p)
- *
+ * Pricing function, overrides price from super.
  */
 public class LandDinosaur extends Bone {
     double speed;

@@ -20,9 +20,9 @@ package Datastore;
  *  Takes 15 parameters and assigns the original values to the bone object.
  *
  * public double getGroundSpeed()
- *
+ * Getter, gets ground speed attribute of LandCarnivore
  * public void setGroundSpeed(double groundSpeed)
- *
+ * Setter, sets ground speed attribute for LandCarnivore, takes a parameter of type double
  */
 
 

@@ -14,12 +14,13 @@ package Datastore;
  * double gait
  *
  * Functions:
- * public LandDinosaur(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed)
- *
+ * public LandHerbivore(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed)
+ * Constructor for land herbivore dinosaurs model, takes all the initial values for the LandHerbivore
  * public double getGait()
- *
+ * Getter, gets gait attribute of LandHerbivore
  * public void setGait(double gait)
- *
+ * Setter, sets gait attribute of LandHerbivore
+ * Takes a parameter of type double
  */
 public class LandHerbivore extends LandDinosaur {
     double gait;

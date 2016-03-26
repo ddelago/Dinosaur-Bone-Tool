@@ -23,10 +23,16 @@ import java.util.Scanner;
  *
  * Functions:
  * public ArrayList<Bone> loadBones()
+ * This function reads from a CSV file, and creates a Bone object
+ * by passing the values to the constructor
  *
  * public ArrayList<SellerUser> loadSellers()
+ * This function reads from a CSV file, and creates a SellerUser object
+ * by passing the values to the constructor
  *
  * public ArrayList<BuyerUser> loadBuyers()
+ * This function reads from a CSV file, and creates a BuyerUser object
+ * by passing the values to the constructor
  *
  */
 

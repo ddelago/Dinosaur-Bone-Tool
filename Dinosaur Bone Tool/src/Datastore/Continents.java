@@ -11,29 +11,67 @@ import java.util.Scanner;
  * 1001060927
  * 1001089599
  *
- * The Continents class is the class that defines the continent attribute for every bone,user, and map.
+ * The Coordinate class is the class that defines the Coordinate attribute for every bone, user, and map.
  *
  * Data Members:
- * boolean [][]continent;
- * String contName;
- * int priceIncrease;
- * Coordinate coordinate;
- * ArrayList<Continents> contList;
+ * int rowindex, collIndex, landOrWaterMap, available;
+ * double longitude, latitude;
  *
  * Functions:
- * +public Continents(String contName)
- *  Takes a String and assigns the continent object's contName attribute to this string.
- *  Takes the continent file and assigns boolean values into continent depending on the values in the file.
+ * +public Coordinate(String newCoordData [])
+ *  Takes a String array and assigns the attributes rowIndex, collIndex, and landOrWaterMap to these values.
  *
- * +public Continents returnContinents(Coordinate location)
- *  Takes in a Coordinate object and returns what continent this object is on
+ * +public Coordinate(double longitude, double latitude)
+ *  Takes two doubles and assign the Coordinates longitude and latitude attributes to these values.
+ *  It then converts the values to int x and y and assigns the Coordinates rowIndex and collIndex attributes to these values.
  *
- * +public boolean onContinent(Coordinate location)
- *  Takes a Coordinate and returns true of false if it is located on the current continent.
+ * +public int[] getVals()
+ *  Returns an array of the Coordinate objects rowIndex, collIndex, landOrwaterMap, and available attributes.
  *
- * +public float price()
- *  Assign a specific price to the attribute priceIncrease depending on what continent the object is.
+ * +public int longToX(double longitude)
+ *  Converts a longitude value to a x map index and returns it.
+ *
+ * +public int latToX(double latitude)
+ *  Converts a latitude value to a y map index and returns it.
+ * public int getRowIndex()
+ *
+ * public void setRowIndex(int rowIndex)
+ * Setter, sets row index of Coordinate object
+ *
+ * public int getCollIndex()
+ * Getter, gets Column Index of Coordinate object
+ *
+ * public void setCollIndex(int collIndex)
+ * Setter, sets the Column index of Coordinate object
+ *
+ * public int getLandOrWaterMap()
+ * Getter, gets weather Coordinate object is on land or water, 1 or 0
+ *
+ * public void setLandOrWaterMap(int landOrWaterMap)
+ * Setter, sets int of weather Coordinate is on land or water, with a 1 or 0.
+ *
+ * public int getAvailable()
+ * Getter, gets integer value
+ *
+ * public void setAvailable(int available)
+ * Setter, sets integer value of weather
+ *
+ * public double getLongitude()
+ * Getter, get Longitude attribute of Coordinate object
+ *
+ * public void setLongitude(double longitude)
+ * Setter, sets Longitude attribute of Coordinate object, takes a parameter
+ * of type double
+ *
+ * public double getLatitude()
+ * Getter, gets Latitude attribute of Coordinate object
+ *
+ * public void setLatitude(double latitude)
+ * Setter, sets Latitude attribute of Coordinate object, takes a parameter
+ * of type double
+ *
  */
+
 
 public class Continents {
     public boolean [][] continent = new boolean[20][60];
