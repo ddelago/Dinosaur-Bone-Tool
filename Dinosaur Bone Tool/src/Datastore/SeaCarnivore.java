@@ -18,16 +18,24 @@ import java.util.Scanner;
  *
  * Functions:
  * public SeaCarnivore(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name,boolean saltWater, String methodOfPropulsion)
+ * Takes 15 parameters and assigns the original values to the bone object.
+ * Prints methodOfPropulsion
  *
  * private String label(int i)
+ * Sets methodOfPropulsion to "flippers", "tails", "feet" depending on i's value
  *
  * public int randomInteger(int min, int max)
+ * Gets a random int metwween min and max
  *
  * public String getMethodOfPropulsion()
+ * Returns methodOf propulsion
  *
  * public void setMethodOfPropulsion(String methodOfPropulsion)
+ * Takes a string and sets methodOfPropulsion to it
  *
  * public float pricing(Coordinate coordinate, float p)
+ * Displays the suggested price and prompts the user if they want to change it.
+ * returns the new price.
  *
  *
  */
@@ -35,12 +43,6 @@ import java.util.Scanner;
 public class SeaCarnivore extends SeaDinosaur {
 
     String methodOfPropulsion = label(randomInteger(0, 2));
-
-    /*public SeaCarnivore(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, boolean isAvailable, Coordinate coordinate, boolean saltWater, String methodOfPropulsion) {
-        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, saltWater);
-        this.methodOfPropulsion = label(randomInteger(0, 2));
-        System.out.print(getMethodOfPropulsion());
-    }*/
 
     public SeaCarnivore(boolean isAvailable, int age,int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name,boolean saltWater, String methodOfPropulsion) {
         super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name, saltWater);
@@ -63,7 +65,6 @@ public class SeaCarnivore extends SeaDinosaur {
         setMethodOfPropulsion(methodOfPropulsion);
         return methodOfPropulsion;
     }
-
 
     public int randomInteger(int min, int max) {
         Random rand = new Random();

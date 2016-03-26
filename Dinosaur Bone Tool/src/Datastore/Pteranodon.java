@@ -20,20 +20,22 @@ package Datastore;
  *
  * Functions:
  * public Pteranodon(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double wingspan, int numberOfTeeth, boolean availabilityOfSaddle, double costOfSaddle, String answer) {
+ * Takes 15 parameters and assigns the original values to the bone object.
  *
  * public boolean isAvailabilityOfSaddle()
+ * returns availabilityOfSaddle
  *
  * public void setAvailabilityOfSaddle(boolean availabilityOfSaddle)
+ * Takes a boolean value and sets availabilityOfSaddle to it.
  *
  * public double getCostOfSaddle()
+ * Returns costOfSaddle
  *
  * public void setCostOfSaddle(double costOfSaddle)
- *
- * public String getAnswer()
- *
- * public void setAnswer(String answer)
+ * Takes a double and sets costOfSaddle to it
  *
  * public float specialOffer(float price)
+ * If availabilityOfSaddle is true, prompt the user to take an offer to change the costOfSaddle
  *
  */
 
@@ -50,13 +52,6 @@ public class Pteranodon extends AirCarnivore {
     Formatter output;
     Scanner input;
 
-    /*public Pteranodon(String name, int age, int id, float price, float length, float width, float height, float weight, float latitude, float longitude, String condition, String origin, String prospector, double wingspan, int numberOfTeeth, boolean availabilityOfSaddle, double costOfSaddle) {
-        super(name, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, wingspan, numberOfTeeth);
-        this.availabilityOfSaddle = availabilityOfSaddle;
-        this.costOfSaddle = costOfSaddle + 1000;
-        specialOffer(price);
-    }*/
-
     public Pteranodon(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double wingspan, int numberOfTeeth, boolean availabilityOfSaddle, double costOfSaddle, String answer) {
         super(isAvailable, age, id, price, length, width, height, weight, latitude, longitude, condition, origin, prospector, name,  wingspan, numberOfTeeth);
         this.availabilityOfSaddle = availabilityOfSaddle;
@@ -70,14 +65,6 @@ public class Pteranodon extends AirCarnivore {
 
     public void setAvailabilityOfSaddle(boolean availabilityOfSaddle) {
         this.availabilityOfSaddle = availabilityOfSaddle;
-    }
-
-    public double getCostOfSaddle() {
-        return costOfSaddle;
-    }
-
-    public void setCostOfSaddle(double costOfSaddle) {
-        this.costOfSaddle = costOfSaddle;
     }
 
     public String getAnswer() {

@@ -64,49 +64,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Triceratops.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Datastore/Triceratops.java">
+      <file leaf-file-name="SeaDinosaur.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Datastore/SeaDinosaur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="3" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+            <state line="25" column="53" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="795">
               <folding>
-                <element signature="e#1350#1351#0" expanded="true" />
-                <element signature="e#1382#1383#0" expanded="true" />
+                <element signature="method#isSaltWater#0;class#SeaDinosaur#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TyrannosaurusRex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Datastore/TyrannosaurusRex.java">
+      <file leaf-file-name="SeaCarnivore.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Datastore/SeaCarnivore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="226" max-vertical-offset="825">
+            <state line="20" column="74" selection-start="640" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1545">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Shastasaurus.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Datastore/Shastasaurus.java">
+      <file leaf-file-name="Pterosaur.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Datastore/Pterosaur.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="45" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="735">
+            <state line="12" column="16" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SeaDinosaur.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Datastore/SeaDinosaur.java">
+      <file leaf-file-name="Pterodactyl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Datastore/Pterodactyl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="13" selection-start="718" selection-end="718" vertical-scroll-proportion="0.6880734" vertical-offset="0" max-vertical-offset="795">
+            <state line="19" column="2" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Seller.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
+      <file leaf-file-name="Pteranodon.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Datastore/Pteranodon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="9" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0" vertical-offset="8730" max-vertical-offset="12300">
+            <state line="33" column="32" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.41798943" vertical-offset="258" max-vertical-offset="1500">
               <folding />
             </state>
           </provider>
@@ -139,6 +138,11 @@
         <option value="$PROJECT_DIR$/src/Datastore/Velociraptor.java" />
         <option value="$PROJECT_DIR$/src/Datastore/TyrannosaurusRex.java" />
         <option value="$PROJECT_DIR$/src/Datastore/Shastasaurus.java" />
+        <option value="$PROJECT_DIR$/src/Datastore/SeaDinosaur.java" />
+        <option value="$PROJECT_DIR$/src/Datastore/SeaCarnivore.java" />
+        <option value="$PROJECT_DIR$/src/Datastore/Pterosaur.java" />
+        <option value="$PROJECT_DIR$/src/Datastore/Pterodactyl.java" />
+        <option value="$PROJECT_DIR$/src/Datastore/Pteranodon.java" />
       </list>
     </option>
   </component>
@@ -488,7 +492,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4110672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30988142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24556214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -626,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/AirDinosaur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="14" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1110">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/AirCarnivore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="3" selection-start="23" selection-end="23" vertical-scroll-proportion="0.025041737" vertical-offset="15" max-vertical-offset="720">
@@ -661,20 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/Pterodactyl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/Pterosaur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/Amargasaurus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="16" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="915">
@@ -692,13 +675,6 @@
     <entry file="file://$PROJECT_DIR$/src/buyer/BuyerUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="3" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/Pteranodon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="13" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="1635">
           <folding />
         </state>
       </provider>
@@ -727,20 +703,6 @@
     <entry file="file://$PROJECT_DIR$/src/buyer/Buyer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="13" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="6840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/SeaCarnivore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="13" selection-start="914" selection-end="914" vertical-scroll-proportion="0.69616026" vertical-offset="78" max-vertical-offset="1530">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/Giganotosaurus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="75" selection-start="321" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="675">
           <folding />
         </state>
       </provider>
@@ -780,23 +742,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/LandHerbivore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Datastore/Shastasaurus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/Triceratops.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="3" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+        <state line="2" column="3" selection-start="23" selection-end="23" vertical-scroll-proportion="0.052910052" vertical-offset="0" max-vertical-offset="750">
           <folding>
             <element signature="e#1350#1351#0" expanded="true" />
             <element signature="e#1382#1383#0" expanded="true" />
@@ -806,21 +754,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/TyrannosaurusRex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="226" max-vertical-offset="825">
+        <state line="15" column="20" selection-start="326" selection-end="326" vertical-scroll-proportion="0.3968254" vertical-offset="0" max-vertical-offset="825">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Seller/Seller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="9" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0" vertical-offset="8730" max-vertical-offset="12300">
+        <state line="768" column="62" selection-start="31627" selection-end="31627" vertical-scroll-proportion="3.8095238" vertical-offset="9315" max-vertical-offset="12300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/Shastasaurus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="2" selection-start="644" selection-end="644" vertical-scroll-proportion="0.47619048" vertical-offset="0" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/Giganotosaurus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="75" selection-start="321" selection-end="392" vertical-scroll-proportion="0.31569666" vertical-offset="76" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/AirDinosaur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="26" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.3968254" vertical-offset="240" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/LandHerbivore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="301" selection-end="301" vertical-scroll-proportion="0.3968254" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/SeaCarnivore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="74" selection-start="640" selection-end="711" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1545">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Datastore/SeaDinosaur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="718" selection-end="718" vertical-scroll-proportion="0.6880734" vertical-offset="0" max-vertical-offset="795">
+        <state line="25" column="53" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="795">
+          <folding>
+            <element signature="method#isSaltWater#0;class#SeaDinosaur#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/Pterosaur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="16" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/Pterodactyl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="2" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Datastore/Pteranodon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="32" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.41798943" vertical-offset="258" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
