@@ -1,6 +1,8 @@
 package Datastore;
 
-/*
+import java.util.Scanner;
+
+/**
  * SeaDinosaur.java
  * Daniel Delago
  * Kolten Sturgill
@@ -24,7 +26,7 @@ package Datastore;
  * Takes a boolean value and sets saltWater to it.
  *
  * public float pricing(Coordinate coordinate, float price)
- * Returns zero
+ * Pricing function, overrides price from super.
  *
  */
 
@@ -43,7 +45,23 @@ public class SeaDinosaur extends Bone {
     }
 
     @Override
-    public float pricing(Coordinate coordinate, float price) {
-        return 0;
+    public float pricing(Coordinate coordinate, float p) {
+        System.out.printf("We recommend this price for this region: $%.2f\n Would you like to use this?\n",p);
+        String response;
+        Scanner in = new Scanner(System.in);
+        float newPrice;
+        try {
+            response = in.next();
+            if (response.equals("yes")) {
+                return price;
+            } else {
+                System.out.print("What would you like to set the price as?");
+                newPrice = in.nextFloat();
+                price = newPrice;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return price;
     }
 }

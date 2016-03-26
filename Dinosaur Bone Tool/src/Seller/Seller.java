@@ -436,7 +436,8 @@ public class Seller {
     /**
      * Function executed from handleBone() that takes a single
      * line of input (name, price, longitude, latitude,) and
-     * creates a Bone object based off of input.
+     * creates a Bone object based off of input. The ID is generated
+     * randomly from a range of 1 to 50.
      * <p/>
      * TODO: Side effect: If you do not put a comma on the last value, an error will occur.
      */
@@ -467,6 +468,9 @@ public class Seller {
             price = Float.parseFloat(array[1]);
             longitude = Double.parseDouble(array[2]);
             lat = Double.parseDouble(array[3]);
+            Random rand = new Random();
+            int id = rand.nextInt(50) + 1;
+
 
             for (String specificBone : specificBones)
                 if (dinosaurName.equals(specificBone)) {
@@ -476,56 +480,56 @@ public class Seller {
             if (match) {
                 switch (dinosaurName) {
                     case ("amargasaurus"):
-                        Amargasaurus amargasaurus = new Amargasaurus(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, "");
+                        Amargasaurus amargasaurus = new Amargasaurus(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, "");
                         String code = amargasaurus.getDownloadCode();
                         amargasaurus.setDownloadCode(code);
                         boneList.add(amargasaurus);
                         break;
 
                     case ("dakosaurus"):
-                        Dakosaurus dakosaurus = new Dakosaurus(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, true, "feet");
+                        Dakosaurus dakosaurus = new Dakosaurus(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, true, "feet");
                         boneList.add(dakosaurus);
                         break;
                     case ("giganotosaurus"):
-                        Giganotosaurus giganotosaurus = new Giganotosaurus(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0);
+                        Giganotosaurus giganotosaurus = new Giganotosaurus(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0);
                         boneList.add(giganotosaurus);
                         break;
                     case ("hylaeosaurus"):
-                        Hylaeosaurus hylaeosaurus = new Hylaeosaurus(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, 0, 0);
+                        Hylaeosaurus hylaeosaurus = new Hylaeosaurus(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, 0, 0);
                         boneList.add(hylaeosaurus);
                         break;
                     case ("pteranodon"):
-                        Pteranodon pteranodon = new Pteranodon(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, true, 0, "yes");
+                        Pteranodon pteranodon = new Pteranodon(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, true, 0, "yes");
                         boneList.add(pteranodon);
                         break;
                     case ("pterodactyl"):
-                        Pterodactyl pterodactyl = new Pterodactyl(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, true);
+                        Pterodactyl pterodactyl = new Pterodactyl(true, id, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, true);
                         boneList.add(pterodactyl);
                         break;
                     case ("pterosaur"):
-                        Pterosaur pterosaur = new Pterosaur(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, "Red");
+                        Pterosaur pterosaur = new Pterosaur(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, "Red");
                         boneList.add(pterosaur);
                         break;
                     case ("shastasaurus"):
-                        Shastasaurus shastasaurus = new Shastasaurus(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, true, "feet");
+                        Shastasaurus shastasaurus = new Shastasaurus(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, true, "feet");
                         int teeth = Shastasaurus.getNumberOfTeeth();
                         Shastasaurus.setNumberOfTeeth(teeth);
                         boneList.add(shastasaurus);
                         break;
                     case ("spinosaurus"):
-                        Spinosaurus spinosaurus = new Spinosaurus(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, 0);
+                        Spinosaurus spinosaurus = new Spinosaurus(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, 0);
                         boneList.add(spinosaurus);
                         break;
                     case ("triceratops"):
-                        Triceratops triceratops = new Triceratops(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Kolten", dinosaurName, 0, 0, 0);
+                        Triceratops triceratops = new Triceratops(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Kolten", dinosaurName, 0, 0, 0);
                         boneList.add(triceratops);
                         break;
                     case ("tyrannosaurusrex"):
-                        TyrannosaurusRex tyrannosaurusRex = new TyrannosaurusRex(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, 0);
+                        TyrannosaurusRex tyrannosaurusRex = new TyrannosaurusRex(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, 0);
                         boneList.add(tyrannosaurusRex);
                         break;
                     case ("velociraptor"):
-                        Velociraptor velociraptor = new Velociraptor(true, 0, 0, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, "large");
+                        Velociraptor velociraptor = new Velociraptor(true, 0, id, price, 0, 0, 0, 0, lat, longitude, "new", "USA", "Daniel", dinosaurName, 0, 0, "large");
                         boneList.add(velociraptor);
                         break;
 
