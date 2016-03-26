@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6386dfd9-1544-41c4-b8fe-a6678d3e64d7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dinosaur Bone Tool/src/Datastore/SeaDinosaur.java" afterPath="$PROJECT_DIR$/Dinosaur Bone Tool/src/Datastore/SeaDinosaur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dinosaur Bone Tool/src/Seller/Seller.java" afterPath="$PROJECT_DIR$/Dinosaur Bone Tool/src/Seller/Seller.java" />
-    </list>
+    <list default="true" id="6386dfd9-1544-41c4-b8fe-a6678d3e64d7" name="Default" comment="" />
     <ignored path="Dinosaur-Bone-Tool.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +35,8 @@
       <file leaf-file-name="Seller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dinosaur Bone Tool/src/Seller/Seller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6368078">
-              <caret line="476" column="33" selection-start-line="476" selection-start-column="33" selection-end-line="476" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.4869707">
+              <caret line="520" column="50" selection-start-line="520" selection-start-column="50" selection-end-line="520" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1103,8 +1100,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dinosaur Bone Tool/src/Seller/Seller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6368078">
-          <caret line="476" column="33" selection-start-line="476" selection-start-column="33" selection-end-line="476" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.4869707">
+          <caret line="520" column="50" selection-start-line="520" selection-start-column="50" selection-end-line="520" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
