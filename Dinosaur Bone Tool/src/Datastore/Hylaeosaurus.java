@@ -16,11 +16,10 @@ import java.util.Random;
  * int armorThicknessRight
  *
  * Functions:
- * +public Hylaeosaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double gait, int armorThicknessLeft, int armorThicknessRight) {
-
+ * +public Hylaeosaurus(boolean isAvailable, int age, int id, float price, float length, float width, float height, float weight, double latitude, double longitude, String condition, String origin, String prospector, String name, double speed, double gait, int armorThicknessLeft, int armorThicknessRight)
  *  Takes 15 parameters and assigns the original values to the bone object.
  *
- *  public getArmorThicknessLeft()
+ * +public getArmorThicknessLeft()
  *
  *  public setArmorThicknessLeft(int armorThicknessLeft)
  *

@@ -412,13 +412,13 @@ public class Buyer {                                        //Buyer Class
             if (!Objects.equals(temp.getName(), name))
                 continue;
             else {
-                System.out.print("Please enter a new name for the seller:");
+                System.out.print("Please enter a new name for the buyer:");
                 String newName = input.next();
                 temp.setName(newName);
-                System.out.print("Please enter a new longitude for the seller:");
+                System.out.print("Please enter a new longitude for the buyer:");
                 Double newLong = input.nextDouble();
                 temp.setLongitude(newLong);
-                System.out.print("Please enter a new latitude for the seller:");
+                System.out.print("Please enter a new latitude for the buyer:");
                 Double newLat = input.nextDouble();
                 temp.setLatitude(newLat);
             }

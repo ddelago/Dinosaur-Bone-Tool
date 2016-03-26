@@ -59,9 +59,11 @@ import java.util.*;
  *
  * saveFile()
  * No parameters, nothing being returned
+ * Writes all bone objects in boneList to the text.csv file
  *
  * saveBuyer()
  * No parameters, nothing being returned
+ * Writes all user objects in userList to the seller.csv file
  *
  * userMenu()
  * No parameters, nothing being returned
@@ -75,19 +77,32 @@ import java.util.*;
  *
  * updateUser()
  * No parameters, nothing being returned
+ * Based on the current ArrayList of users, the user can type in a
+ * matching name that is displayed from the table, and this will prompt
+ * the user for new values of the user.
  *
  * setupUser()
  * No parameters, nothing being returned
- *
- * public double distance()
+ * Prompts the user for a name, longitude, and latitude.
+ * Creates a new user with those values and adds it to userList.
  *
  * public double[] userCoord()
+ * Prompts the user to select a buyer and seller. Then takes the coordinate of
+ * both and stores it into a array of type double and returns this.
+ *
+ * public double distance()
+ * Using the Vincenty Formula this function uses two sets of Coordinates and
+ * returns the distance between two users in miles.
  *
  * public void scramble()
+ * For every bone in boneList, two random int coordinates are created.
+ * Then for every coordinate on the map, if it is a land coordinate and if the random
+ * coordinates are at this location, break out of the loop and those new coordinates are valid.
+ * Else if the new coordinates are not on land, create two new random coordinates and
+ * test those coordinates.
  *
  * public void loadContinents()
- *
- *
+ * For every Continent file, create a continent object and add it to contList.
  *
  */
 
@@ -190,12 +205,8 @@ public class Seller {
             System.out.println("\nWould you like to:\n1.Set up a new user.\n2.Update a user.\n3.Remove a user.\n4.Quit to main menu");
             choice = input.nextInt();
             if (choice == 1) {
-                /*Bone newBone = new Bone();
-                newBone.create();
-                boneList.add(newBone);*/
                 setupUser();
             }
-
             if (choice == 2) {
                 updateUser();
             }
@@ -767,8 +778,6 @@ public class Seller {
         for (int k = 0; k < boneList.size(); k++)
             try {
                 String line = boneList.get(k).toString();
-
-
                 outStream.write(line);
 
             } catch (IOException e) {
