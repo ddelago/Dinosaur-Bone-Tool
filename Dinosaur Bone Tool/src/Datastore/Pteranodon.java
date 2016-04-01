@@ -90,7 +90,6 @@ public class Pteranodon extends AirCarnivore {
             default:
                 setAnswer("no");
         }
-
         }
         return price;
     }
